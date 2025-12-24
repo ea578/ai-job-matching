@@ -5,176 +5,125 @@
   <title>Find dit nye job</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
     body {
-      background: #f5f7f6;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f5;
       color: #111;
     }
 
-    /* ===== TOPBAR ===== */
+    /* HEADER */
     header {
-      background: #0f7a4a;
+      background: #0f7a5a;
       color: white;
-      padding: 16px 40px;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     header h1 {
-      font-size: 22px;
-      font-weight: bold;
+      margin: 0;
+      font-size: 24px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 24px;
-      font-weight: 500;
-    }
-
-    nav a.button {
-      background: white;
-      color: #0f7a4a;
-      padding: 8px 16px;
-      border-radius: 20px;
+      margin-left: 20px;
       font-weight: bold;
     }
 
-    /* ===== HERO ===== */
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #0f7a4a, #0b5d38);
-      padding: 80px 20px;
+      background: linear-gradient(135deg, #0f7a5a, #0c5f46);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-buttons {
       display: flex;
       justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .hero-card {
+    .cta-buttons a {
       background: white;
-      padding: 48px;
-      border-radius: 18px;
-      max-width: 520px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-
-    .hero-card h2 {
-      font-size: 34px;
-      margin-bottom: 16px;
-    }
-
-    .hero-card p {
-      font-size: 16px;
-      color: #444;
-      margin-bottom: 32px;
-      line-height: 1.5;
-    }
-
-    .cta {
-      background: #0f7a4a;
-      color: white;
-      border: none;
+      color: #0f7a5a;
       padding: 14px 28px;
       border-radius: 30px;
-      font-size: 16px;
+      text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
     }
 
-    .small-text {
-      margin-top: 14px;
-      font-size: 13px;
-      color: #666;
+    .cta-buttons a.secondary {
+      background: #111;
+      color: white;
     }
 
-    /* ===== INFO SEKTION ===== */
+    /* INFO SECTION */
     .info {
       padding: 80px 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .info-grid {
-      max-width: 1000px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .info-box {
       background: white;
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .info-box h3 {
-      margin-bottom: 12px;
-      color: #0f7a4a;
-    }
-
-    .info-box p {
-      color: #444;
-      line-height: 1.5;
-    }
-
-    /* ===== LOGIN / REGISTER ===== */
-    .auth {
-      padding: 60px 20px;
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-    }
-
-    .auth-box {
-      max-width: 700px;
-      width: 100%;
-      background: #f5f7f6;
-      padding: 40px;
-      border-radius: 20px;
       text-align: center;
     }
 
-    .auth-box h2 {
-      margin-bottom: 24px;
+    .info h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
-    .auth-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+    .info p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 17px;
+      line-height: 1.6;
     }
 
-    .auth-card {
-      background: white;
+    .roles {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .role-card {
+      background: #f4f6f5;
       padding: 30px;
       border-radius: 16px;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 320px;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
-    .auth-card h3 {
-      margin-bottom: 10px;
-      color: #0f7a4a;
+    .role-card h4 {
+      margin-top: 0;
+      color: #0f7a5a;
     }
 
-    .auth-card p {
-      font-size: 14px;
-      color: #444;
-    }
-
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     footer {
-      background: #0b5d38;
+      background: #111;
       color: white;
+      padding: 30px;
       text-align: center;
-      padding: 20px;
       font-size: 14px;
     }
   </style>
@@ -182,77 +131,59 @@
 
 <body>
 
-  <!-- TOPBAR -->
-  <header>
-    <h1>AI Job Matching</h1>
-    <nav>
-      <a href="#">Jobs</a>
-      <a href="#">For jobsøgere</a>
-      <a href="#">For arbejdsgivere</a>
-      <a href="#" class="button">Log ind</a>
-    </nav>
-  </header>
+<header>
+  <h1>AI Job Matching</h1>
+  <nav>
+    <a href="#">Log ind</a>
+    <a href="#">Opret bruger</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-card">
-      <h2>Find dit nye job</h2>
+<section class="hero">
+  <h2>Find dit nye job</h2>
+  <p>
+    Upload din ansøgning og dit CV én gang.  
+    Vores AI finder relevante jobs og sender ansøgninger for dig – helt automatisk.
+  </p>
+
+  <div class="cta-buttons">
+    <a href="#">Jeg er jobsøger</a>
+    <a href="#" class="secondary">Jeg er arbejdsgiver</a>
+  </div>
+</section>
+
+<section class="info">
+  <h3>Hvad gør vi?</h3>
+  <p>
+    Vi gør jobsøgning nemmere end nogensinde før.  
+    Som jobsøger uploader du blot din ansøgning og dit CV – resten klarer vores AI.  
+    Som arbejdsgiver kan du oprette jobopslag og blive matchet med relevante kandidater.
+  </p>
+
+  <div class="roles">
+    <div class="role-card">
+      <h4>👤 Jobsøger</h4>
       <p>
-        Upload din ansøgning og dit CV én gang.  
-        Vores AI finder relevante jobs og sender ansøgninger for dig – helt automatisk.
+        Opret én profil.  
+        Upload dit CV og din ansøgning.  
+        Få automatisk sendt ansøgninger til relevante stillinger.
       </p>
-      <button class="cta">Kom i gang</button>
-      <div class="small-text">Fremtidens jobsøgning starter her</div>
     </div>
-  </section>
 
-  <!-- INFO -->
-  <section class="info">
-    <div class="info-grid">
-      <div class="info-box">
-        <h3>For jobsøgere</h3>
-        <p>
-          Spar tid. Lad vores AI matche dig med de rigtige stillinger og sende ansøgninger automatisk.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <h3>For arbejdsgivere</h3>
-        <p>
-          Opret jobopslag og få relevante kandidater, der matcher jeres behov – hurtigt og effektivt.
-        </p>
-      </div>
-
-      <div class="info-box">
-        <h3>AI-drevet matching</h3>
-        <p>
-          Intelligent teknologi analyserer CV’er, ansøgninger og jobopslag for det bedste match.
-        </p>
-      </div>
+    <div class="role-card">
+      <h4>🏢 Arbejdsgiver</h4>
+      <p>
+        Opret jobopslag.  
+        Bliv matchet med kvalificerede kandidater.  
+        Spar tid og find de rette medarbejdere hurtigere.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- LOGIN / REGISTER -->
-  <section class="auth">
-    <div class="auth-box">
-      <h2>Log ind eller opret bruger</h2>
-      <div class="auth-options">
-        <div class="auth-card">
-          <h3>Jobsøger</h3>
-          <p>Find dit næste job automatisk med AI</p>
-        </div>
-        <div class="auth-card">
-          <h3>Arbejdsgiver</h3>
-          <p>Opret jobopslag og find de rette medarbejdere</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2025 AI Job Matching · Alle rettigheder forbeholdes
-  </footer>
+<footer>
+  © 2025 AI Job Matching · Alle rettigheder forbeholdt
+</footer>
 
 </body>
 </html>
