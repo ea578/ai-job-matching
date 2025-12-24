@@ -3,12 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <title>AI Job Matching</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    p {
+      opacity: 0.9;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    button {
+      background: #00e6e6;
+      color: #003333;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Find job automatisk med AI</h1>
-  <p>
-    Upload dit CV én gang – vores AI finder og sender jobansøgninger for dig.
-  </p>
-  <button>Kom i gang</button>
+  <div class="card">
+    <h1>Find job automatisk med AI</h1>
+    <p>
+      Upload dit CV én gang – vores AI finder og sender
+      jobansøgninger for dig.
+    </p>
+    <button>Kom i gang</button>
+  </div>
 </body>
 </html>
