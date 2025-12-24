@@ -9,182 +9,105 @@
     :root {
       --green: #1f7a4f;
       --dark: #0f172a;
-      --light: #f8fafc;
+      --gray: #64748b;
+      --bg: #f5f7fa;
       --gold: #c9a24d;
-      --gray: #475569;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-      background: var(--light);
+      background: var(--bg);
       color: var(--dark);
+      line-height: 1.6;
     }
 
-    /* HEADER */
     header {
       background: white;
-      border-bottom: 1px solid #e5e7eb;
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     header h1 {
       font-size: 22px;
-      font-weight: 700;
+      font-weight: bold;
     }
 
-    header h1 span {
-      color: var(--gold);
-    }
-
-    nav a {
-      margin-left: 24px;
+    header nav a {
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: 500;
       color: var(--dark);
+      font-weight: 500;
     }
 
-    .btn {
-      background: var(--green);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 12px;
-    }
-
-    .btn.secondary {
-      background: transparent;
-      border: 1px solid var(--green);
-      color: var(--green);
-    }
-
-    /* HERO */
     .hero {
-      padding: 100px 20px;
+      padding: 80px 20px;
       text-align: center;
-      background: linear-gradient(180deg, #ffffff, #f1f5f9);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
     }
 
     .hero h2 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 20px;
+      font-size: 40px;
+      margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 18px;
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #e5e7eb;
     }
 
-    .hero .actions a {
-      margin: 10px;
+    .btn {
       display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* AI SECTION */
-    .ai-section {
-      background: white;
+    .section {
       padding: 80px 20px;
-      text-align: center;
-    }
-
-    .ai-section h3 {
-      font-size: 36px;
-      margin-bottom: 12px;
-    }
-
-    .ai-section h3 span {
-      color: var(--gold);
-    }
-
-    .ai-section p {
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 50px;
-      font-size: 17px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
       max-width: 1100px;
-      margin: 0 auto;
+      margin: auto;
     }
 
-    .feature-box {
-      background: var(--light);
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
       border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      text-align: left;
-      transition: transform 0.2s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
 
-    .feature-box:hover {
-      transform: translateY(-6px);
-    }
-
-    .feature-box h4 {
-      font-size: 20px;
+    .card h3 {
       margin-bottom: 10px;
     }
 
-    .feature-box p {
-      font-size: 15px;
-      color: var(--gray);
-      line-height: 1.5;
+    .tagline span {
+      color: var(--gold);
+      font-weight: bold;
     }
 
-    /* USER TYPES */
-    .users {
-      padding: 80px 20px;
-      background: #f1f5f9;
-    }
-
-    .users-grid {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-    }
-
-    .user-card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    }
-
-    .user-card h4 {
-      font-size: 24px;
-      margin-bottom: 14px;
-    }
-
-    .user-card p {
-      color: var(--gray);
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    /* FOOTER */
     footer {
-      background: var(--dark);
-      color: #cbd5f5;
+      background: #111;
+      color: white;
       text-align: center;
       padding: 30px;
       font-size: 14px;
@@ -195,75 +118,89 @@
 <body>
 
 <header>
-  <h1>FindDit<span>Job</span></h1>
+  <h1>FindDitJob</h1>
   <nav>
-    <a href="#">Job</a>
-    <a href="#">For virksomheder</a>
-    <a href="#">Om os</a>
-    <a href="#" class="btn secondary">Log ind</a>
-    <a href="#" class="btn">Opret bruger</a>
+    <a href="#">Log ind</a>
+    <a href="#">Opret bruger</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h2>Find dit nye job</h2>
   <p>
-    Upload din ansøgning og dit CV én gang.  
-    Vores <strong>AI-drevne platform</strong> finder relevante job og sender ansøgninger for dig – helt automatisk.
+    Upload din ansøgning og dit CV én gang – vores AI-drevne platform finder jobbet for dig.
   </p>
-  <div class="actions">
-    <a href="#" class="btn">Kom i gang</a>
-    <a href="#" class="btn secondary">Sådan virker det</a>
-  </div>
+  <a class="btn" href="#">Kom i gang</a>
 </section>
 
-<section class="ai-section">
-  <h3>AI-drevet jobmatching <span>i topklasse</span></h3>
-  <p>
-    Vi kombinerer avanceret kunstig intelligens med jobdata for at skabe den mest præcise og effektive jobmatching på markedet.
-  </p>
-
-  <div class="features">
-    <div class="feature-box">
-      <h4>⚡ Hurtigere</h4>
-      <p>Find relevante job på sekunder – uden manuel søgning og gentagne ansøgninger.</p>
-    </div>
-
-    <div class="feature-box">
-      <h4>🧠 Smartere</h4>
-      <p>Vores AI analyserer dit CV, din ansøgning og jobkrav for perfekt match.</p>
-    </div>
-
-    <div class="feature-box">
-      <h4>🎯 Mere præcist</h4>
-      <p>Kun relevante stillinger – ingen spam, ingen irrelevante opslag.</p>
-    </div>
-
-    <div class="feature-box">
-      <h4>🤝 For begge parter</h4>
-      <p>Jobsøgere sparer tid, arbejdsgivere finder bedre kandidater hurtigere.</p>
-    </div>
-  </div>
-</section>
-
-<section class="users">
-  <div class="users-grid">
-    <div class="user-card">
-      <h4>For jobsøgere</h4>
+<!-- 🔁 FLYTTET OP: JOBSØGER / ARBEJDSGIVER -->
+<section class="section">
+  <div class="grid">
+    <div class="card">
+      <h3>For jobsøgere</h3>
       <p>
         Opret dig én gang. Upload dit CV og din ansøgning.
         Lad AI’en finde og søge de rigtige job for dig.
       </p>
-      <a href="#" class="btn">Jeg er jobsøger</a>
+      <br>
+      <a class="btn" href="#">Jeg er jobsøger</a>
     </div>
 
-    <div class="user-card">
-      <h4>For arbejdsgivere</h4>
+    <div class="card">
+      <h3>For arbejdsgivere</h3>
       <p>
         Opret jobopslag og modtag målrettede ansøgninger
         fra relevante kandidater – helt automatisk.
       </p>
-      <a href="#" class="btn secondary">Jeg er arbejdsgiver</a>
+      <br>
+      <a class="btn" href="#">Jeg er arbejdsgiver</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🔁 FLYTTET NED: AI JOBMATCHING -->
+<section class="section">
+  <h2 class="tagline" style="text-align:center; margin-bottom:20px;">
+    AI-drevet jobmatching <span>i topklasse</span>
+  </h2>
+
+  <p style="text-align:center; max-width:700px; margin:0 auto 50px; color:var(--gray);">
+    Vi kombinerer avanceret kunstig intelligens med jobdata for at skabe
+    den mest præcise og effektive jobmatching på markedet.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>⚡ Hurtigere</h3>
+      <p>
+        Find relevante job på sekunder – uden manuel søgning
+        og gentagne ansøgninger.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🧠 Smartere</h3>
+      <p>
+        AI analyserer dit CV, din ansøgning og jobkrav
+        for perfekt match.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Mere præcist</h3>
+      <p>
+        Kun relevante stillinger – ingen spam,
+        ingen irrelevante opslag.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🤝 For begge parter</h3>
+      <p>
+        Jobsøgere sparer tid, arbejdsgivere finder
+        bedre kandidater hurtigere.
+      </p>
     </div>
   </div>
 </section>
