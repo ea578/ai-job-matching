@@ -1,138 +1,129 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Find dit nye job</title>
-
-  <style>
+  < style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
       background: #f4f6f5;
       color: #111;
     }
 
-    /* HEADER */
     header {
-      background: #0f7a5a;
-      color: white;
+      background: #ffffff;
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #ddd;
     }
 
-    header h1 {
+    header h2 {
       margin: 0;
-      font-size: 24px;
+      color: #1e7f43;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
       margin-left: 20px;
+      text-decoration: none;
+      color: #111;
       font-weight: bold;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #0f7a5a, #0c5f46);
+      background: linear-gradient(120deg, #1e7f43, #2ecc71);
       color: white;
-      padding: 100px 20px;
+      padding: 80px 40px;
       text-align: center;
     }
 
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 0 auto 40px;
+      font-size: 20px;
+      margin-bottom: 40px;
     }
 
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .cta-buttons button {
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
-    .cta-buttons a {
+    .login-btn {
       background: white;
-      color: #0f7a5a;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
+      color: #1e7f43;
       font-weight: bold;
     }
 
-    .cta-buttons a.secondary {
+    .signup-btn {
       background: #111;
       color: white;
     }
 
-    /* INFO SECTION */
     .info {
-      padding: 80px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 40px;
       background: white;
+    }
+
+    .info-box {
+      max-width: 300px;
+    }
+
+    .info-box h3 {
+      color: #1e7f43;
+    }
+
+    .role-section {
+      background: #f4f6f5;
+      padding: 60px 40px;
       text-align: center;
-    }
-
-    .info h3 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .info p {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      font-size: 17px;
-      line-height: 1.6;
     }
 
     .roles {
       display: flex;
       justify-content: center;
       gap: 30px;
-      flex-wrap: wrap;
+      margin-top: 30px;
     }
 
     .role-card {
-      background: #f4f6f5;
+      background: white;
       padding: 30px;
-      border-radius: 16px;
-      max-width: 320px;
-      text-align: left;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      width: 260px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
-    .role-card h4 {
+    .role-card h3 {
       margin-top: 0;
-      color: #0f7a5a;
+      color: #1e7f43;
     }
 
-    /* FOOTER */
     footer {
+      text-align: center;
+      padding: 20px;
       background: #111;
       color: white;
-      padding: 30px;
-      text-align: center;
       font-size: 14px;
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>AI Job Matching</h1>
+  <h2>FindDitJob</h2>
   <nav>
     <a href="#">Log ind</a>
     <a href="#">Opret bruger</a>
@@ -140,49 +131,53 @@
 </header>
 
 <section class="hero">
-  <h2>Find dit nye job</h2>
-  <p>
-    Upload din ansøgning og dit CV én gang.  
-    Vores AI finder relevante jobs og sender ansøgninger for dig – helt automatisk.
-  </p>
+  <h1>Find dit nye job</h1>
+  <p>Upload din ansøgning og dit CV én gang – vores AI-drevne platform finder jobbet for dig.</p>
 
   <div class="cta-buttons">
-    <a href="#">Jeg er jobsøger</a>
-    <a href="#" class="secondary">Jeg er arbejdsgiver</a>
+    <button class="login-btn">Log ind</button>
+    <button class="signup-btn">Opret bruger</button>
   </div>
 </section>
 
 <section class="info">
-  <h3>Hvad gør vi?</h3>
-  <p>
-    Vi gør jobsøgning nemmere end nogensinde før.  
-    Som jobsøger uploader du blot din ansøgning og dit CV – resten klarer vores AI.  
-    Som arbejdsgiver kan du oprette jobopslag og blive matchet med relevante kandidater.
-  </p>
+  <div class="info-box">
+    <h3>For jobsøgere</h3>
+    <p>Opret dig én gang, upload dit CV og din ansøgning, og lad systemet finde relevante job for dig.</p>
+  </div>
+
+  <div class="info-box">
+    <h3>For arbejdsgivere</h3>
+    <p>Opret jobopslag og modtag målrettede ansøgninger fra relevante kandidater – helt automatisk.</p>
+  </div>
+
+  <div class="info-box">
+    <h3>AI-drevet matching</h3>
+    <p>Vores platform matcher kompetencer og jobkrav lynhurtigt, så begge parter sparer tid.</p>
+  </div>
+</section>
+
+<section class="role-section">
+  <h2>Kom i gang</h2>
+  <p>Vælg hvilken type bruger du er</p>
 
   <div class="roles">
     <div class="role-card">
-      <h4>👤 Jobsøger</h4>
-      <p>
-        Opret én profil.  
-        Upload dit CV og din ansøgning.  
-        Få automatisk sendt ansøgninger til relevante stillinger.
-      </p>
+      <h3>Jobsøger</h3>
+      <p>Find dit næste job uden at søge igen og igen.</p>
+      <button class="login-btn">Jeg er jobsøger</button>
     </div>
 
     <div class="role-card">
-      <h4>🏢 Arbejdsgiver</h4>
-      <p>
-        Opret jobopslag.  
-        Bliv matchet med kvalificerede kandidater.  
-        Spar tid og find de rette medarbejdere hurtigere.
-      </p>
+      <h3>Arbejdsgiver</h3>
+      <p>Find den rette medarbejder hurtigt og nemt.</p>
+      <button class="signup-btn">Jeg er arbejdsgiver</button>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2025 AI Job Matching · Alle rettigheder forbeholdt
+  © 2025 FindDitJob – AI-drevet jobmatching
 </footer>
 
 </body>
