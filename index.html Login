@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Log ind – FindDitJob</title>
+</head>
+<body>
+  <h1>Log ind</h1>
+
+  <input type="email" placeholder="Email"><br><br>
+  <input type="password" placeholder="Adgangskode"><br><br>
+
+  <button>Log ind</button>
+
+  <p>Har du ikke en konto? <a href="register.html">Opret bruger</a></p>
+  <a href="index.html">← Tilbage</a>
+</body>
+</html>
