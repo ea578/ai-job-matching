@@ -1,183 +1,253 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <title>Find dit nye job</title>
-  < style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f5;
-      color: #111;
+  <meta charset="UTF-8" />
+  <title>FindDitJob – Find dit nye job</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --green: #1e7f43;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
     }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    /* HEADER */
     header {
-      background: #ffffff;
-      padding: 20px 40px;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ddd;
     }
 
-    header h2 {
-      margin: 0;
-      color: #1e7f43;
+    header .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--green);
     }
 
-    nav a {
+    header nav a {
       margin-left: 20px;
       text-decoration: none;
-      color: #111;
-      font-weight: bold;
+      font-weight: 600;
+      color: var(--dark);
     }
 
-    .hero {
-      background: linear-gradient(120deg, #1e7f43, #2ecc71);
+    header nav a.primary {
+      background: var(--green);
       color: white;
-      padding: 80px 40px;
+      padding: 10px 16px;
+      border-radius: 8px;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #e6f4ec, #ffffff);
+      padding: 100px 20px;
       text-align: center;
     }
 
     .hero h1 {
       font-size: 48px;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
     .hero p {
       font-size: 20px;
-      margin-bottom: 40px;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 32px;
     }
 
-    .cta-buttons button {
-      padding: 15px 25px;
-      margin: 10px;
+    .hero .cta {
+      display: inline-flex;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 16px 28px;
+      border-radius: 10px;
       font-size: 16px;
-      border: none;
-      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
       cursor: pointer;
     }
 
-    .login-btn {
-      background: white;
-      color: #1e7f43;
-      font-weight: bold;
-    }
-
-    .signup-btn {
-      background: #111;
+    .btn.primary {
+      background: var(--green);
       color: white;
     }
 
-    .info {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 60px 40px;
+    .btn.secondary {
       background: white;
+      border: 2px solid var(--green);
+      color: var(--green);
     }
 
-    .info-box {
-      max-width: 300px;
+    /* SECTIONS */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .info-box h3 {
-      color: #1e7f43;
-    }
-
-    .role-section {
-      background: #f4f6f5;
-      padding: 60px 40px;
+    .section-title {
       text-align: center;
+      margin-bottom: 48px;
     }
 
-    .roles {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
     }
 
-    .role-card {
+    .section-title p {
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
       background: white;
-      padding: 30px;
-      border-radius: 8px;
-      width: 260px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
-    .role-card h3 {
-      margin-top: 0;
-      color: #1e7f43;
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
     }
 
+    .card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
     footer {
+      background: #0b1220;
+      color: #cbd5e1;
       text-align: center;
-      padding: 20px;
-      background: #111;
-      color: white;
+      padding: 32px 16px;
       font-size: 14px;
+    }
+
+    footer span {
+      color: white;
+      font-weight: 600;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h2>FindDitJob</h2>
+  <div class="logo">FindDitJob</div>
   <nav>
     <a href="#">Log ind</a>
-    <a href="#">Opret bruger</a>
+    <a href="#" class="primary">Opret bruger</a>
   </nav>
 </header>
 
 <section class="hero">
   <h1>Find dit nye job</h1>
-  <p>Upload din ansøgning og dit CV én gang – vores AI-drevne platform finder jobbet for dig.</p>
+  <p>
+    Upload din ansøgning og dit CV én gang.  
+    Vores AI-drevne platform matcher dig automatisk med relevante jobs
+    og sender ansøgninger for dig.
+  </p>
 
-  <div class="cta-buttons">
-    <button class="login-btn">Log ind</button>
-    <button class="signup-btn">Opret bruger</button>
+  <div class="cta">
+    <a href="#" class="btn primary">Kom i gang som jobsøger</a>
+    <a href="#" class="btn secondary">Jeg er arbejdsgiver</a>
   </div>
 </section>
 
-<section class="info">
-  <div class="info-box">
-    <h3>For jobsøgere</h3>
-    <p>Opret dig én gang, upload dit CV og din ansøgning, og lad systemet finde relevante job for dig.</p>
+<section>
+  <div class="section-title">
+    <h2>Hvem er du?</h2>
+    <p>Find den løsning, der passer til dig</p>
   </div>
 
-  <div class="info-box">
-    <h3>For arbejdsgivere</h3>
-    <p>Opret jobopslag og modtag målrettede ansøgninger fra relevante kandidater – helt automatisk.</p>
-  </div>
-
-  <div class="info-box">
-    <h3>AI-drevet matching</h3>
-    <p>Vores platform matcher kompetencer og jobkrav lynhurtigt, så begge parter sparer tid.</p>
-  </div>
-</section>
-
-<section class="role-section">
-  <h2>Kom i gang</h2>
-  <p>Vælg hvilken type bruger du er</p>
-
-  <div class="roles">
-    <div class="role-card">
-      <h3>Jobsøger</h3>
-      <p>Find dit næste job uden at søge igen og igen.</p>
-      <button class="login-btn">Jeg er jobsøger</button>
+  <div class="cards">
+    <div class="card">
+      <h3>👤 Jobsøger</h3>
+      <p>
+        Slip for at søge de samme job igen og igen.
+        Upload dit CV og din ansøgning – vi klarer resten for dig.
+      </p>
+      <a href="#" class="btn primary">Opret jobsøger</a>
     </div>
 
-    <div class="role-card">
-      <h3>Arbejdsgiver</h3>
-      <p>Find den rette medarbejder hurtigt og nemt.</p>
-      <button class="signup-btn">Jeg er arbejdsgiver</button>
+    <div class="card">
+      <h3>🏢 Arbejdsgiver</h3>
+      <p>
+        Opret jobopslag og modtag målrettede ansøgninger
+        fra kandidater, der matcher jeres behov.
+      </p>
+      <a href="#" class="btn secondary">Opret arbejdsgiver</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>AI-drevet jobmatching</h2>
+    <p>Hurtigere, smartere og mere præcist</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>⚡ Automatisk matching</h3>
+      <p>
+        Vores AI analyserer kompetencer, erfaring og jobkrav
+        for at skabe det bedst mulige match.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>⏱ Spar tid</h3>
+      <p>
+        Jobsøgere og arbejdsgivere sparer timer – 
+        systemet arbejder døgnet rundt.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Bedre resultater</h3>
+      <p>
+        Færre irrelevante ansøgninger.
+        Mere kvalitet på begge sider.
+      </p>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2025 FindDitJob – AI-drevet jobmatching
+  © 2025 <span>FindDitJob</span> – AI-drevet jobmatching
 </footer>
 
 </body>
