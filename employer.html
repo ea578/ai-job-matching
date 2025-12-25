@@ -1,17 +1,189 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <title>Arbejdsgiver – FindDitJob</title>
+  <meta charset="UTF-8" />
+  <title>For arbejdsgivere – FindDitJob</title>
+
+  <style>
+    :root {
+      --green: #1f7a4a;
+      --green-dark: #165c38;
+      --gold: #c9a24d;
+      --text: #0f172a;
+      --muted: #475569;
+      --bg: #f6f9fc;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--green-dark);
+    }
+
+    .back {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .back a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Opret jobopslag</h1>
 
-  <input type="text" placeholder="Jobtitel"><br><br>
-  <textarea placeholder="Jobbeskrivelse"></textarea><br><br>
+<header>
+  <div class="logo">FindDit<span>Job</span></div>
+</header>
 
-  <button>Opret job</button>
+<main>
 
-  <a href="index.html">← Tilbage</a>
+  <section class="hero">
+    <h1>Find de rette kandidater</h1>
+    <p>
+      Opret jobopslag én gang. Vores AI matcher automatisk dit job
+      med de mest relevante kandidater – hurtigt, præcist og effektivt.
+    </p>
+  </section>
+
+  <section class="cards">
+
+    <div class="card">
+      <h3>Opret jobopslag</h3>
+      <p>
+        Beskriv stillingen kort og klart. AI’en klarer resten
+        og finder de bedst egnede kandidater.
+      </p>
+
+      <form>
+        <input type="text" placeholder="Jobtitel" />
+        <textarea placeholder="Jobbeskrivelse"></textarea>
+        <button type="button">Opret job</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Hvorfor FindDitJob?</h3>
+      <p>
+        ✔ Spar tid på screening<br />
+        ✔ Færre irrelevante ansøgninger<br />
+        ✔ Bedre matches med AI<br />
+        ✔ Hurtigere ansættelser
+      </p>
+    </div>
+
+  </section>
+
+  <div class="back">
+    <a href="index.html">← Tilbage til forsiden</a>
+  </div>
+
+</main>
+
 </body>
 </html>
