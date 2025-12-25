@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Arbejdsgiver – FindDitJob</title>
+</head>
+<body>
+  <h1>Opret jobopslag</h1>
+
+  <input type="text" placeholder="Jobtitel"><br><br>
+  <textarea placeholder="Jobbeskrivelse"></textarea><br><br>
+
+  <button>Opret job</button>
+
+  <a href="index.html">← Tilbage</a>
+</body>
+</html>
