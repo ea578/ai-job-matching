@@ -1,18 +1,164 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Log ind – FindDitJob</title>
+
+  <style>
+    :root {
+      --green: #1f7a4a;
+      --green-dark: #165c38;
+      --gold: #c9a24d;
+      --bg: #f6f9f8;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0 30px;
+      font-size: 26px;
+      color: var(--text);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--green-dark);
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .links a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .back a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Log ind</h1>
+  <div class="container">
+    <div class="logo">FindDit<span>Job</span></div>
 
-  <input type="email" placeholder="Email"><br><br>
-  <input type="password" placeholder="Adgangskode"><br><br>
+    <h1>Log ind</h1>
 
-  <button>Log ind</button>
+    <form>
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="din@email.dk"
+        required
+      />
 
-  <p>Har du ikke en konto? <a href="register.html">Opret bruger</a></p>
-  <a href="index.html">← Tilbage</a>
+      <label for="password">Adgangskode</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="••••••••"
+        required
+      />
+
+      <button type="submit">Log ind</button>
+    </form>
+
+    <div class="links">
+      Har du ikke en konto?
+      <a href="register.html">Opret bruger</a>
+    </div>
+
+    <div class="back">
+      <a href="index.html">← Tilbage til forsiden</a>
+    </div>
+  </div>
 </body>
 </html>
