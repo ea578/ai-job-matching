@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <title>Opret bruger – FindDitJob</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     :root {
       --green: #1f7a4a;
       --green-dark: #165c38;
       --gold: #c9a24d;
-      --bg: #f6f9f8;
       --text: #0f172a;
       --muted: #64748b;
+      --bg: #f6f9fc;
       --card: #ffffff;
+      --border: #e5e7eb;
     }
 
     * {
@@ -26,170 +26,121 @@
         Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
 
-    header {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 20px 32px;
+    .card {
+      background: var(--card);
+      width: 100%;
+      max-width: 420px;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      text-align: center;
     }
 
     .logo {
+      font-size: 26px;
       font-weight: 800;
-      font-size: 22px;
+      margin-bottom: 12px;
     }
 
     .logo span {
       color: var(--gold);
     }
 
-    .container {
-      max-width: 960px;
-      margin: 80px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
     h1 {
-      font-size: 36px;
-      margin-bottom: 12px;
+      margin: 8px 0;
+      font-size: 24px;
     }
 
-    p.sub {
+    .subtitle {
       color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 48px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 36px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-      text-align: left;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
-
-    .card p {
-      color: var(--muted);
-      line-height: 1.6;
       margin-bottom: 28px;
+      font-size: 15px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
+    .user-type {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .type-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: left;
+      cursor: pointer;
       transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .btn-primary {
-      background: var(--green);
-      color: white;
+    .type-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transform: translateY(-2px);
     }
 
-    .btn-primary:hover {
-      background: var(--green-dark);
+    .type-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
     }
 
-    .btn-outline {
-      border: 2px solid var(--green);
-      color: var(--green);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--green);
-      color: white;
+    .type-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
     }
 
     .back {
-      margin-top: 48px;
-    }
-
-    .back a {
-      color: var(--muted);
+      margin-top: 20px;
+      display: inline-block;
+      color: var(--green);
       text-decoration: none;
-      font-size: 14px;
+      font-weight: 600;
     }
 
-    .back a:hover {
+    .back:hover {
       text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 32px;
-      font-size: 14px;
-      color: var(--muted);
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">FindDit<span>Job</span></div>
-</header>
+  <div class="card">
+    <div class="logo">FindDit<span>Job</span></div>
 
-<main class="container">
-  <h1>Opret bruger</h1>
-  <p class="sub">
-    Vælg hvilken type bruger du er – så tilpasser vi oplevelsen til dig.
-  </p>
+    <h1>Opret bruger</h1>
+    <p class="subtitle">
+      Vælg hvilken type bruger du er
+    </p>
 
-  <div class="cards">
-    <div class="card">
-      <h2>For jobsøgere</h2>
-      <p>
-        Upload dit CV og din ansøgning én gang.
-        Vores AI matcher dig automatisk med relevante job
-        og sender ansøgninger for dig.
-      </p>
-      <a href="jobseeker.html" class="btn btn-primary">
-        Jeg er jobsøger
+    <div class="user-type">
+      <a href="jobseeker.html" class="type-card">
+        <h3>👤 Jobsøger</h3>
+        <p>
+          Upload dit CV og din ansøgning én gang.
+          Lad AI finde de rette job for dig.
+        </p>
+      </a>
+
+      <a href="employer.html" class="type-card">
+        <h3>🏢 Arbejdsgiver</h3>
+        <p>
+          Opret jobopslag og modtag målrettede
+          ansøgninger fra relevante kandidater.
+        </p>
       </a>
     </div>
 
-    <div class="card">
-      <h2>For arbejdsgivere</h2>
-      <p>
-        Opret jobopslag og modtag målrettede ansøgninger
-        fra kvalificerede kandidater – hurtigt og effektivt.
-      </p>
-      <a href="employer.html" class="btn btn-outline">
-        Jeg er arbejdsgiver
-      </a>
-    </div>
+    <a href="index.html" class="back">← Tilbage til forsiden</a>
   </div>
-
-  <div class="back">
-    <a href="index.html">← Tilbage til forsiden</a>
-  </div>
-</main>
-
-<footer>
-  © 2026 FindDitJob – AI-drevet jobmatching
-</footer>
 
 </body>
 </html>
