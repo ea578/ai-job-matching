@@ -2,7 +2,7 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>For arbejdsgivere – FindDitJob</title>
+  <title>Arbejdsgiver – FindDitJob</title>
 
   <style>
     :root {
@@ -13,177 +13,184 @@
       --muted: #475569;
       --bg: #f6f9fc;
       --card: #ffffff;
+      --border: #e2e8f0;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+      line-height: 1.6;
     }
 
     header {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 20px 40px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      font-weight: 800;
       font-size: 22px;
+      font-weight: 800;
     }
 
     .logo span {
       color: var(--gold);
     }
 
+    .nav a {
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+    }
+
     main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    .hero {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .hero h1 {
-      font-size: 44px;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
     .card {
       background: var(--card);
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
     }
 
-    .card h3 {
-      margin-top: 0;
+    h1 {
+      font-size: 34px;
       margin-bottom: 10px;
     }
 
-    .card p {
+    .subtitle {
       color: var(--muted);
-      line-height: 1.6;
+      margin-bottom: 35px;
+      max-width: 600px;
     }
 
-    form {
-      margin-top: 20px;
+    .form-group {
+      margin-bottom: 22px;
     }
 
-    input, textarea {
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    input,
+    textarea {
       width: 100%;
-      padding: 12px 14px;
-      margin-bottom: 14px;
-      border-radius: 10px;
-      border: 1px solid #d1d5db;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
       font-size: 15px;
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 140px;
       resize: vertical;
     }
 
-    button {
-      background: var(--green);
-      color: white;
-      border: none;
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
+    .actions {
+      margin-top: 30px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
     }
 
-    button:hover {
-      background: var(--green-dark);
-    }
-
-    .back {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .back a {
-      color: var(--green);
+    .back-link {
+      color: var(--muted);
       text-decoration: none;
       font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">FindDit<span>Job</span></div>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">FindDit<span>Job</span></div>
+      <nav>
+        <a href="index.html">Forside</a>
+      </nav>
+    </div>
+  </header>
 
-<main>
-
-  <section class="hero">
-    <h1>Find de rette kandidater</h1>
-    <p>
-      Opret jobopslag én gang. Vores AI matcher automatisk dit job
-      med de mest relevante kandidater – hurtigt, præcist og effektivt.
-    </p>
-  </section>
-
-  <section class="cards">
-
+  <!-- MAIN -->
+  <main>
     <div class="card">
-      <h3>Opret jobopslag</h3>
-      <p>
-        Beskriv stillingen kort og klart. AI’en klarer resten
-        og finder de bedst egnede kandidater.
+      <h1>Opret jobopslag</h1>
+      <p class="subtitle">
+        Opret dit jobopslag én gang – vores AI matcher dig automatisk
+        med de mest relevante kandidater.
       </p>
 
-      <form>
-        <input type="text" placeholder="Jobtitel" />
-        <textarea placeholder="Jobbeskrivelse"></textarea>
-        <button type="button">Opret job</button>
-      </form>
+      <div class="form-group">
+        <label for="title">Jobtitel</label>
+        <input type="text" id="title" placeholder="Fx. Marketing Manager" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Jobbeskrivelse</label>
+        <textarea id="description" placeholder="Beskriv stillingen, krav og forventninger..."></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary">Opret job</button>
+        <a href="index.html" class="back-link">← Tilbage</a>
+      </div>
     </div>
+  </main>
 
-    <div class="card">
-      <h3>Hvorfor FindDitJob?</h3>
-      <p>
-        ✔ Spar tid på screening<br />
-        ✔ Færre irrelevante ansøgninger<br />
-        ✔ Bedre matches med AI<br />
-        ✔ Hurtigere ansættelser
-      </p>
-    </div>
-
-  </section>
-
-  <div class="back">
-    <a href="index.html">← Tilbage til forsiden</a>
-  </div>
-
-</main>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 FindDitJob – AI-drevet jobmatching
+  </footer>
 
 </body>
 </html>
