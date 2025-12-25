@@ -9,41 +9,43 @@
       --green: #1f7a4a;
       --green-dark: #165c38;
       --gold: #c9a24d;
-      --bg: #f6f9f8;
       --text: #0f172a;
       --muted: #6b7280;
+      --bg: #f6f9fc;
       --card: #ffffff;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
-      margin: 0;
       background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .container {
+    .login-card {
+      background: var(--card);
       width: 100%;
       max-width: 420px;
-      background: var(--card);
-      padding: 40px;
+      padding: 48px;
       border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
+      margin-bottom: 8px;
       text-align: center;
-      margin-bottom: 10px;
     }
 
     .logo span {
@@ -51,55 +53,60 @@
     }
 
     h1 {
+      font-size: 28px;
       text-align: center;
-      margin: 10px 0 30px;
-      font-size: 26px;
-      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 32px;
     }
 
     label {
-      display: block;
-      margin-bottom: 6px;
       font-weight: 600;
       font-size: 14px;
+      display: block;
+      margin-bottom: 6px;
     }
 
     input {
       width: 100%;
-      padding: 14px;
-      margin-bottom: 20px;
+      padding: 14px 16px;
       border-radius: 10px;
       border: 1px solid #e5e7eb;
       font-size: 15px;
+      margin-bottom: 18px;
     }
 
     input:focus {
       outline: none;
       border-color: var(--green);
+      box-shadow: 0 0 0 2px rgba(31, 122, 74, 0.15);
     }
 
-    button {
+    .btn {
       width: 100%;
       padding: 14px;
-      background: var(--green);
-      color: white;
-      border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       font-size: 16px;
       font-weight: 700;
+      border: none;
       cursor: pointer;
-      transition: background 0.2s ease;
+      background: var(--green);
+      color: white;
+      transition: 0.2s;
     }
 
-    button:hover {
+    .btn:hover {
       background: var(--green-dark);
     }
 
     .links {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 24px;
       font-size: 14px;
-      color: var(--muted);
     }
 
     .links a {
@@ -113,23 +120,25 @@
     }
 
     .back {
+      display: block;
       text-align: center;
-      margin-top: 25px;
-    }
-
-    .back a {
-      text-decoration: none;
-      color: var(--muted);
+      margin-top: 20px;
       font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+
+  <div class="login-card">
     <div class="logo">FindDit<span>Job</span></div>
 
     <h1>Log ind</h1>
+    <p class="subtitle">
+      Velkommen tilbage – fortsæt din AI-drevne jobsøgning
+    </p>
 
     <form>
       <label for="email">E-mail</label>
@@ -148,7 +157,7 @@
         required
       />
 
-      <button type="submit">Log ind</button>
+      <button class="btn" type="submit">Log ind</button>
     </form>
 
     <div class="links">
@@ -156,9 +165,8 @@
       <a href="register.html">Opret bruger</a>
     </div>
 
-    <div class="back">
-      <a href="index.html">← Tilbage til forsiden</a>
-    </div>
+    <a href="index.html" class="back">← Tilbage til forsiden</a>
   </div>
+
 </body>
 </html>
