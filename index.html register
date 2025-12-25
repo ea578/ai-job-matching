@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Opret bruger – FindDitJob</title>
+</head>
+<body>
+  <h1>Opret bruger</h1>
+
+  <p>Vælg brugertype:</p>
+
+  <a href="jobseeker.html">Jeg er jobsøger</a><br><br>
+  <a href="employer.html">Jeg er arbejdsgiver</a><br><br>
+
+  <a href="index.html">← Tilbage</a>
+</body>
+</html>
