@@ -1,172 +1,44 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
-  <title>Log ind – FindDitJob</title>
-
-  <style>
-    :root {
-      --green: #1f7a4a;
-      --green-dark: #165c38;
-      --gold: #c9a24d;
-      --text: #0f172a;
-      --muted: #6b7280;
-      --bg: #f6f9fc;
-      --card: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .login-card {
-      background: var(--card);
-      width: 100%;
-      max-width: 420px;
-      padding: 48px;
-      border-radius: 16px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      text-align: center;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    h1 {
-      font-size: 28px;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: var(--muted);
-      margin-bottom: 32px;
-    }
-
-    label {
-      font-weight: 600;
-      font-size: 14px;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    input {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: var(--green);
-      box-shadow: 0 0 0 2px rgba(31, 122, 74, 0.15);
-    }
-
-    .btn {
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      background: var(--green);
-      color: white;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: var(--green-dark);
-    }
-
-    .links {
-      text-align: center;
-      margin-top: 24px;
-      font-size: 14px;
-    }
-
-    .links a {
-      color: var(--green);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    .back {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Log ind – Find dit nye job</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="login-card">
-    <div class="logo">FindDit<span>Job</span></div>
-
-    <h1>Log ind</h1>
-    <p class="subtitle">
-      Velkommen tilbage – fortsæt din AI-drevne jobsøgning
-    </p>
-
-    <form>
-      <label for="email">E-mail</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="din@email.dk"
-        required
-      />
-
-      <label for="password">Adgangskode</label>
-      <input
-        type="password"
-        id="password"
-        placeholder="••••••••"
-        required
-      />
-
-      <button class="btn" type="submit">Log ind</button>
-    </form>
-
-    <div class="links">
-      Har du ikke en konto?
+  <nav class="navbar">
+    <div class="logo">JobMatch</div>
+    <div class="nav-links">
+      <a href="index.html">Forside</a>
+      <a href="login.html" class="active">Log ind</a>
       <a href="register.html">Opret bruger</a>
     </div>
+  </nav>
 
-    <a href="index.html" class="back">← Tilbage til forsiden</a>
-  </div>
+  <section class="auth-container">
+    <div class="auth-box">
+      <h1>Log ind</h1>
+      <p>Velkommen tilbage – log ind for at fortsætte</p>
+
+      <form>
+        <label>Email</label>
+        <input type="email" placeholder="din@email.dk" required>
+
+        <label>Adgangskode</label>
+        <input type="password" placeholder="••••••••" required>
+
+        <button type="submit" class="primary-btn">
+          Log ind
+        </button>
+      </form>
+
+      <p class="auth-footer">
+        Har du ikke en konto?
+        <a href="register.html">Opret bruger</a>
+      </p>
+    </div>
+  </section>
 
 </body>
 </html>
