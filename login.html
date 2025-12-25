@@ -1,44 +1,166 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <title>Log ind – Find dit nye job</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <title>Log ind – FindDitJob</title>
 
-  <nav class="navbar">
-    <div class="logo">JobMatch</div>
-    <div class="nav-links">
-      <a href="index.html">Forside</a>
-      <a href="login.html" class="active">Log ind</a>
+  <style>
+    :root {
+      --green: #1f7a4a;
+      --green-dark: #165c38;
+      --text: #0f172a;
+      --muted: #64748b;
+      --bg: #f6f9fc;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .login-wrapper {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0 10px;
+      font-size: 28px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      margin-top: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+
+    button {
+      width: 100%;
+      margin-top: 24px;
+      padding: 14px;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--green-dark);
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-wrapper">
+    <div class="logo">FindDit<span>Job</span></div>
+
+    <h1>Log ind</h1>
+    <p class="subtitle">
+      Velkommen tilbage – log ind for at fortsætte
+    </p>
+
+    <form>
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="din@email.dk"
+        required
+      />
+
+      <label for="password">Adgangskode</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="••••••••"
+        required
+      />
+
+      <button type="submit">Log ind</button>
+    </form>
+
+    <div class="footer-text">
+      Har du ikke en konto?
       <a href="register.html">Opret bruger</a>
     </div>
-  </nav>
 
-  <section class="auth-container">
-    <div class="auth-box">
-      <h1>Log ind</h1>
-      <p>Velkommen tilbage – log ind for at fortsætte</p>
-
-      <form>
-        <label>Email</label>
-        <input type="email" placeholder="din@email.dk" required>
-
-        <label>Adgangskode</label>
-        <input type="password" placeholder="••••••••" required>
-
-        <button type="submit" class="primary-btn">
-          Log ind
-        </button>
-      </form>
-
-      <p class="auth-footer">
-        Har du ikke en konto?
-        <a href="register.html">Opret bruger</a>
-      </p>
-    </div>
-  </section>
-
+    <a href="index.html" class="back-link">← Tilbage til forsiden</a>
+  </div>
 </body>
 </html>
