@@ -1,17 +1,211 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Jobsøger – FindDitJob</title>
+
+  <style>
+    :root {
+      --green: #1f7a4a;
+      --green-dark: #165c38;
+      --gold: #c9a24d;
+      --text: #0f172a;
+      --muted: #64748b;
+      --bg: #f6f9fc;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 16px;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      background: #f9fafb;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .cta {
+      margin-top: 30px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--green);
+      border: 2px solid var(--green);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Upload CV og ansøgning</h1>
 
-  <input type="file"><br><br>
-  <input type="file"><br><br>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">FindDit<span>Job</span></div>
+    <a href="index.html" style="text-decoration:none;color:var(--muted)">Tilbage til forsiden</a>
+  </header>
 
-  <button>Upload</button>
+  <!-- CONTENT -->
+  <main class="container">
+    <h1>Upload dit CV og din ansøgning</h1>
+    <p class="sub">
+      Upload én gang – vores <strong>AI-drevne matching</strong> finder relevante job
+      og sender ansøgninger for dig automatisk.
+    </p>
 
-  <a href="index.html">← Tilbage</a>
+    <div class="card">
+      <form>
+
+        <div class="grid">
+
+          <div>
+            <label>CV (PDF)</label>
+            <input type="file" accept=".pdf" />
+          </div>
+
+          <div>
+            <label>Ansøgning (PDF)</label>
+            <input type="file" accept=".pdf" />
+          </div>
+
+          <div>
+            <label>Hvilken type job søger du?</label>
+            <select>
+              <option>Vælg jobtype</option>
+              <option>Fuldtid</option>
+              <option>Deltid</option>
+              <option>Studiejob</option>
+              <option>Praktik</option>
+              <option>Freelance</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Hvor vil du arbejde?</label>
+            <input type="text" placeholder="Fx København, Aarhus eller Remote" />
+          </div>
+
+          <div class="full">
+            <label>Evt. ekstra ønsker (valgfrit)</label>
+            <input type="text" placeholder="Fx lønniveau, branche, fleksibilitet" />
+          </div>
+
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary">Start automatisk jobsøgning</button>
+          <a href="index.html" class="btn btn-outline">Annuller</a>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 FindDitJob – AI-drevet jobmatching
+  </footer>
+
 </body>
 </html>
