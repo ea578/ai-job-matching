@@ -1,17 +1,174 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Opret bruger – FindDitJob</title>
+
+  <style>
+    :root {
+      --green: #1f7a4a;
+      --green-dark: #165c38;
+      --gold: #c9a24d;
+      --text: #0f172a;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 40px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    p.subtitle {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 50px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+      text-align: left;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--green);
+      color: var(--green);
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Opret bruger</h1>
 
-  <p>Vælg brugertype:</p>
+  <header>
+    <div class="logo">FindDit<span>Job</span></div>
+  </header>
 
-  <a href="jobseeker.html">Jeg er jobsøger</a><br><br>
-  <a href="employer.html">Jeg er arbejdsgiver</a><br><br>
+  <main>
+    <h1>Opret din konto</h1>
+    <p class="subtitle">
+      Vælg hvilken type bruger du er – og kom i gang med
+      AI-drevet jobmatching på få minutter.
+    </p>
 
-  <a href="index.html">← Tilbage</a>
+    <div class="cards">
+
+      <!-- JOBSØGER -->
+      <div class="card">
+        <h3>For jobsøgere</h3>
+        <p>
+          Upload dit CV og din ansøgning én gang.
+          Vores AI matcher dig automatisk med relevante job
+          og sender ansøgninger for dig.
+        </p>
+        <a href="jobseeker.html" class="btn btn-primary">
+          Jeg er jobsøger
+        </a>
+      </div>
+
+      <!-- ARBEJDSGIVER -->
+      <div class="card">
+        <h3>For arbejdsgivere</h3>
+        <p>
+          Opret jobopslag og modtag målrettede ansøgninger
+          fra relevante kandidater – hurtigt, præcist og effektivt.
+        </p>
+        <a href="employer.html" class="btn btn-outline">
+          Jeg er arbejdsgiver
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2025 FindDitJob – AI-drevet jobmatching
+  </footer>
+
 </body>
 </html>
