@@ -3,72 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <title>Opret bruger – FindDitJob</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     :root {
       --green: #1f7a4a;
       --green-dark: #165c38;
       --gold: #c9a24d;
+      --bg: #f6f9f8;
       --text: #0f172a;
-      --muted: #475569;
-      --bg: #f6f9fc;
+      --muted: #64748b;
       --card: #ffffff;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     header {
       background: white;
       border-bottom: 1px solid #e5e7eb;
-      padding: 18px 40px;
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 20px 32px;
     }
 
     .logo {
-      font-size: 22px;
       font-weight: 800;
+      font-size: 22px;
     }
 
     .logo span {
       color: var(--gold);
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 20px;
-    }
-
-    .card {
-      background: var(--card);
-      max-width: 720px;
-      width: 100%;
-      padding: 50px;
-      border-radius: 16px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    .container {
+      max-width: 960px;
+      margin: 80px auto;
+      padding: 0 20px;
       text-align: center;
     }
 
@@ -77,125 +55,141 @@
       margin-bottom: 12px;
     }
 
-    .sub {
+    p.sub {
       color: var(--muted);
       font-size: 18px;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
 
-    .choices {
+    .cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
     }
 
-    .choice {
-      border: 2px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 32px;
+    .card {
+      background: var(--card);
+      padding: 36px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
       text-align: left;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .choice:hover {
-      border-color: var(--green);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-      transform: translateY(-3px);
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
     }
 
-    .choice h3 {
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
       font-size: 22px;
-      margin-bottom: 10px;
     }
 
-    .choice p {
+    .card p {
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.6;
+      margin-bottom: 28px;
     }
 
-    .jobseeker h3 {
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--green);
       color: var(--green);
+      background: transparent;
     }
 
-    .employer h3 {
-      color: var(--gold);
+    .btn-outline:hover {
+      background: var(--green);
+      color: white;
     }
 
     .back {
-      margin-top: 20px;
-      display: inline-block;
+      margin-top: 48px;
+    }
+
+    .back a {
       color: var(--muted);
       text-decoration: none;
       font-size: 14px;
     }
 
-    .back:hover {
+    .back a:hover {
       text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      padding: 24px;
+      padding: 32px;
       font-size: 14px;
       color: var(--muted);
-    }
-
-    @media (max-width: 700px) {
-      .choices {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="nav">
-      <div class="logo">FindDit<span>Job</span></div>
-    </div>
-  </header>
+<header>
+  <div class="logo">FindDit<span>Job</span></div>
+</header>
 
-  <main>
+<main class="container">
+  <h1>Opret bruger</h1>
+  <p class="sub">
+    Vælg hvilken type bruger du er – så tilpasser vi oplevelsen til dig.
+  </p>
+
+  <div class="cards">
     <div class="card">
-      <h1>Opret bruger</h1>
-      <p class="sub">
-        Vælg hvilken type bruger du er – så guider vi dig videre.
+      <h2>For jobsøgere</h2>
+      <p>
+        Upload dit CV og din ansøgning én gang.
+        Vores AI matcher dig automatisk med relevante job
+        og sender ansøgninger for dig.
       </p>
-
-      <div class="choices">
-        <a href="jobseeker.html" class="choice jobseeker">
-          <h3>👤 Jeg er jobsøger</h3>
-          <p>
-            Upload dit CV og din ansøgning én gang.
-            Vores AI finder relevante job og søger for dig automatisk.
-          </p>
-        </a>
-
-        <a href="employer.html" class="choice employer">
-          <h3>🏢 Jeg er arbejdsgiver</h3>
-          <p>
-            Opret jobopslag og modtag målrettede ansøgninger
-            fra relevante kandidater – hurtigt og præcist.
-          </p>
-        </a>
-      </div>
-
-      <a href="index.html" class="back">← Tilbage til forsiden</a>
+      <a href="jobseeker.html" class="btn btn-primary">
+        Jeg er jobsøger
+      </a>
     </div>
-  </main>
 
-  <footer>
-    © 2025 FindDitJob – AI-drevet jobmatching
-  </footer>
+    <div class="card">
+      <h2>For arbejdsgivere</h2>
+      <p>
+        Opret jobopslag og modtag målrettede ansøgninger
+        fra kvalificerede kandidater – hurtigt og effektivt.
+      </p>
+      <a href="employer.html" class="btn btn-outline">
+        Jeg er arbejdsgiver
+      </a>
+    </div>
+  </div>
+
+  <div class="back">
+    <a href="index.html">← Tilbage til forsiden</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 FindDitJob – AI-drevet jobmatching
+</footer>
 
 </body>
 </html>
