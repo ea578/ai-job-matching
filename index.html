@@ -8,6 +8,20 @@
     html {
   scroll-behavior: smooth;
 }
+    .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+}
     :root {
       --green: #1f7a4a;
       --green-dark: #165c38;
@@ -188,13 +202,22 @@
   <header>
     <div class="nav">
       <div class="logo">FindDit<span>Job</span></div>
-      <nav>
-        <a href="#">Job</a>
-        <a href="#">For virksomheder</a>
-        <a href="#">Om os</a>
-        <a href="login.html" class="btn btn-outline">Log ind</a>
-<a href="register.html" class="btn btn-primary">Opret bruger</a>
-      </nav>
+      <nav class="nav-right">
+  <a href="#">Job</a>
+  <a href="#">For virksomheder</a>
+  <a href="#">Om os</a>
+
+  <!-- 🌍 Land & sprog -->
+  <select id="languageSwitcher" class="lang-select">
+    <option value="da-DK">🇩🇰 Danmark – Dansk</option>
+    <option value="en-US">🇺🇸 United States – English</option>
+    <option value="de-DE">🇩🇪 Deutschland – Deutsch</option>
+    <option value="fr-FR">🇫🇷 France – Français</option>
+  </select>
+
+  <a href="login.html" class="btn btn-outline">Log ind</a>
+  <a href="register.html" class="btn btn-primary">Opret bruger</a>
+</nav>
     </div>
   </header>
 
