@@ -352,6 +352,27 @@
     location.reload(); // senere skifter vi tekst dynamisk
   });
 </script>
+<footer>
+  © 2026 FindDitJob
+</footer>
+
+<script>
+  const langSwitcher = document.getElementById("languageSwitcher");
+
+  // load saved language
+  const savedLang = localStorage.getItem("language");
+  if (savedLang) {
+    langSwitcher.value = savedLang;
+  }
+
+  langSwitcher.addEventListener("change", () => {
+    localStorage.setItem("language", langSwitcher.value);
+    location.reload();
+  });
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
