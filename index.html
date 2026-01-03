@@ -223,7 +223,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Find dit nye job</h1>
+    <h1 id="hero-title">Find dit nye job</h1>
     <p>
       Upload din ansøgning og dit CV én gang.
       Vores <strong>AI-drevne platform</strong> matcher dig automatisk
@@ -342,15 +342,37 @@
 <script>
   const langSwitcher = document.getElementById("languageSwitcher");
 
-  if (langSwitcher) {
-    const savedLang = localStorage.getItem("language");
-    if (savedLang) {
-      langSwitcher.value = savedLang;
+  const translations = {
+    "da-DK": {
+      heroTitle: "Find dit nye job"
+    },
+    "en-US": {
+      heroTitle: "Find your new job"
+    },
+    "de-DE": {
+      heroTitle: "Finde deinen neuen Job"
+    },
+    "fr-FR": {
+      heroTitle: "Trouvez votre nouvel emploi"
     }
+  };
+
+  function applyLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
+
+    document.getElementById("hero-title").textContent = t.heroTitle;
+  }
+
+  // load saved language
+  const savedLang = localStorage.getItem("language") || "da-DK";
+  if (langSwitcher) {
+    langSwitcher.value = savedLang;
+    applyLanguage(savedLang);
 
     langSwitcher.addEventListener("change", () => {
       localStorage.setItem("language", langSwitcher.value);
-      location.reload();
+      applyLanguage(langSwitcher.value);
     });
   }
 </script>
