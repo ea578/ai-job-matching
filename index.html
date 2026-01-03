@@ -224,11 +224,11 @@
   <!-- HERO -->
   <section class="hero">
     <h1 id="hero-title">Find dit nye job</h1>
-    <p>
-      Upload din ansøgning og dit CV én gang.
-      Vores <strong>AI-drevne platform</strong> matcher dig automatisk
-      med relevante job og sender ansøgninger for dig – helt automatisk.
-    </p>
+    <p id="hero-subtitle">
+  Upload din ansøgning og dit CV én gang.
+  Vores <strong>AI-drevne platform</strong> matcher dig automatisk
+  med relevante job og sender ansøgninger for dig – helt automatisk.
+</p>
 
     <div class="hero-buttons">
   <a href="register.html" class="btn btn-primary">Kom i gang</a>
@@ -343,18 +343,26 @@
   const langSwitcher = document.getElementById("languageSwitcher");
 
   const translations = {
-    "da-DK": {
-      heroTitle: "Find dit nye job"
-    },
-    "en-US": {
-      heroTitle: "Find your new job"
-    },
-    "de-DE": {
-      heroTitle: "Finde deinen neuen Job"
-    },
-    "fr-FR": {
-      heroTitle: "Trouvez votre nouvel emploi"
-    }
+  "da-DK": {
+    heroTitle: "Find dit nye job",
+    heroSubtitle:
+      "Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk."
+  },
+  "en-US": {
+    heroTitle: "Find your new job",
+    heroSubtitle:
+      "Upload your application and CV once. Our AI-powered platform automatically matches you with relevant jobs and sends applications for you."
+  },
+  "de-DE": {
+    heroTitle: "Finde deinen neuen Job",
+    heroSubtitle:
+      "Lade deine Bewerbung und deinen Lebenslauf einmal hoch. Unsere KI-gestützte Plattform findet automatisch passende Jobs für dich."
+  },
+  "fr-FR": {
+    heroTitle: "Trouvez votre nouvel emploi",
+    heroSubtitle:
+      "Téléchargez votre candidature et votre CV une seule fois. Notre plateforme basée sur l’IA vous met automatiquement en relation avec des emplois pertinents."
+  }
   };
 
   function applyLanguage(lang) {
@@ -362,6 +370,7 @@
     if (!t) return;
 
     document.getElementById("hero-title").textContent = t.heroTitle;
+    document.getElementById("hero-subtitle").innerHTML = t.heroSubtitle;
   }
 
   // load saved language
