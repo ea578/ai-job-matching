@@ -17,6 +17,8 @@
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -46,13 +48,8 @@
 
     .logo span { color: var(--gold); }
 
-    nav {
-      display: flex;
-      align-items: center;
-    }
-
     nav a {
-      margin-left: 24px;
+      margin-left: 28px;
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
@@ -60,11 +57,8 @@
 
     select {
       margin-left: 24px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: 1px solid #d1d5db;
-      font-weight: 500;
-      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
     }
 
     .btn {
@@ -128,15 +122,12 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     }
 
-    .card p {
-      color: var(--muted);
-      line-height: 1.6;
-    }
+    .card p { color: var(--muted); }
 
     .ai-title {
       text-align: center;
       font-size: 36px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .ai-title span { color: var(--gold); }
@@ -146,12 +137,6 @@
       max-width: 700px;
       margin: 0 auto 60px;
       color: var(--muted);
-    }
-
-    .feature {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 10px;
     }
 
     footer {
@@ -170,125 +155,127 @@
   <div class="nav">
     <div class="logo">FindDit<span>Job</span></div>
     <nav>
-      <a href="#" data-i18n="navJobs">Job</a>
-      <a href="#" data-i18n="navCompanies">For virksomheder</a>
-      <a href="#" data-i18n="navAbout">Om os</a>
+      <a href="#how-it-works" id="navJob"></a>
+      <a href="#companies" id="navCompany"></a>
+      <a href="#about" id="navAbout"></a>
 
-      <select id="languageSwitcher">
-        <option value="da">🇩🇰 Dansk</option>
-        <option value="en">🇺🇸 English</option>
-        <option value="de">🇩🇪 Deutsch</option>
-        <option value="fr">🇫🇷 Français</option>
-        <option value="es">🇪🇸 Español</option>
-        <option value="it">🇮🇹 Italiano</option>
-        <option value="pl">🇵🇱 Polski</option>
-        <option value="ro">🇷🇴 Română</option>
-        <option value="hr">🇭🇷 Hrvatski</option>
-        <option value="sr">🇷🇸 Srpski</option>
-        <option value="bs">🇧🇦 Bosanski</option>
-      </select>
+      <select id="countrySwitcher" class="lang-select">
+  <option value="US">🇺🇸 United States</option>
+  <option value="GB">🇬🇧 United Kingdom</option>
+  <option value="CA">🇨🇦 Canada</option>
+  <option value="AU">🇦🇺 Australia</option>
+  <option value="NZ">🇳🇿 New Zealand</option>
 
-      <a href="#" class="btn btn-outline" data-i18n="login">Log ind</a>
-      <a href="#" class="btn btn-primary" data-i18n="signup">Opret bruger</a>
+  <option value="DE">🇩🇪 Germany</option>
+  <option value="AT">🇦🇹 Austria</option>
+  <option value="CH">🇨🇭 Switzerland</option>
+
+  <option value="FR">🇫🇷 France</option>
+  <option value="BE">🇧🇪 Belgium</option>
+
+  <option value="NL">🇳🇱 Netherlands</option>
+
+  <option value="DK">🇩🇰 Denmark</option>
+  <option value="SE">🇸🇪 Sweden</option>
+  <option value="NO">🇳🇴 Norway</option>
+  <option value="FI">🇫🇮 Finland</option>
+</select>
+
+      <a href="login.html" class="btn btn-outline" id="loginBtn"></a>
+      <a href="register.html" class="btn btn-primary" id="signupBtn"></a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <h1 data-i18n="heroTitle">Find dit nye job</h1>
-  <p data-i18n="heroText"></p>
-
+  <h1 id="hero-title"></h1>
+  <p id="hero-subtitle"></p>
   <div class="hero-buttons">
-    <a href="#" class="btn btn-primary" data-i18n="ctaStart">Kom i gang</a>
-    <a href="#" class="btn btn-outline" data-i18n="ctaHow">Sådan virker det</a>
+    <a href="register.html" class="btn btn-primary" id="ctaStart"></a>
+    <a href="#how-it-works" class="btn btn-outline" id="ctaHow"></a>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="how-it-works">
+  <h2 id="howTitle"></h2>
   <div class="cards">
-    <div class="card">
-      <h3 data-i18n="jobseekerTitle"></h3>
-      <p data-i18n="jobseekerText"></p>
-      <a href="#" class="btn btn-primary" data-i18n="jobseekerBtn"></a>
-    </div>
-
-    <div class="card">
-      <h3 data-i18n="employerTitle"></h3>
-      <p data-i18n="employerText"></p>
-      <a href="#" class="btn btn-outline" data-i18n="employerBtn"></a>
-    </div>
+    <div class="card"><h3 id="step1Title"></h3><p id="step1Text"></p></div>
+    <div class="card"><h3 id="step2Title"></h3><p id="step2Text"></p></div>
+    <div class="card"><h3 id="step3Title"></h3><p id="step3Text"></p></div>
   </div>
 </section>
 
-<section class="section">
-  <h2 class="ai-title" data-i18n="aiTitle"></h2>
-  <p class="ai-sub" data-i18n="aiSub"></p>
-</section>
-
-<footer>
-  © 2026 FindDitJob – AI-drevet jobmatching
-</footer>
+<footer id="footerText"></footer>
 
 <script>
+const countryConfig = {
+  US: { lang: "en" },
+  GB: { lang: "en" },
+  CA: { lang: "en" },
+  AU: { lang: "en" },
+  NZ: { lang: "en" },
+
+  DE: { lang: "de" },
+  AT: { lang: "de" },
+  CH: { lang: "de" },
+
+  FR: { lang: "fr" },
+  BE: { lang: "fr" },
+
+  NL: { lang: "nl" },
+
+  DK: { lang: "da" },
+  SE: { lang: "sv" },
+  NO: { lang: "no" },
+  FI: { lang: "fi" }
+};
+
+// EKSEMPEL – dine oversættelser (forkortet her)
 const translations = {
   da: {
-    navJobs: "Job",
-    navCompanies: "For virksomheder",
-    navAbout: "Om os",
-    login: "Log ind",
-    signup: "Opret bruger",
     heroTitle: "Find dit nye job",
-    heroText: "Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk.",
-    ctaStart: "Kom i gang",
-    ctaHow: "Sådan virker det",
-    jobseekerTitle: "For jobsøgere",
-    jobseekerText: "Opret dig én gang. Upload dit CV og lad AI’en finde jobbet for dig.",
-    jobseekerBtn: "Jeg er jobsøger",
-    employerTitle: "For arbejdsgivere",
-    employerText: "Modtag målrettede ansøgninger fra relevante kandidater – automatisk.",
-    employerBtn: "Jeg er arbejdsgiver",
-    aiTitle: "AI-drevet jobmatching i topklasse",
-    aiSub: "Smartere matching og bedre resultater."
+    heroText: "Upload din ansøgning og dit CV én gang..."
   },
-
   en: {
-    navJobs: "Jobs",
-    navCompanies: "For companies",
-    navAbout: "About us",
-    login: "Log in",
-    signup: "Sign up",
     heroTitle: "Find your new job",
-    heroText: "Upload your application and CV once. Our AI-powered platform matches you with relevant jobs automatically.",
-    ctaStart: "Get started",
-    ctaHow: "How it works",
-    jobseekerTitle: "For job seekers",
-    jobseekerText: "Upload your CV once. Let AI find the right jobs for you.",
-    jobseekerBtn: "I am a job seeker",
-    employerTitle: "For employers",
-    employerText: "Receive targeted applications from relevant candidates automatically.",
-    employerBtn: "I am an employer",
-    aiTitle: "AI-powered job matching",
-    aiSub: "Smarter matching and better results."
+    heroText: "Upload your application and CV once..."
+  },
+  de: {
+    heroTitle: "Finde deinen neuen Job",
+    heroText: "Lade deine Bewerbung einmal hoch..."
+  },
+  fr: {
+    heroTitle: "Trouvez votre nouvel emploi",
+    heroText: "Téléchargez votre candidature une seule fois..."
+  },
+  nl: {
+    heroTitle: "Vind je nieuwe baan",
+    heroText: "Upload je sollicitatie één keer..."
   }
 };
 
-function applyLang(lang) {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
+function applyLanguage(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  document.getElementById("hero-title").textContent = t.heroTitle;
+  document.getElementById("hero-subtitle").textContent = t.heroText;
 }
 
-const switcher = document.getElementById("languageSwitcher");
-const savedLang = localStorage.getItem("lang") || "da";
-switcher.value = savedLang;
-applyLang(savedLang);
+// LOAD SAVED COUNTRY
+const countrySwitcher = document.getElementById("countrySwitcher");
+const savedCountry = localStorage.getItem("country") || "US";
 
-switcher.addEventListener("change", () => {
-  localStorage.setItem("lang", switcher.value);
-  applyLang(switcher.value);
+countrySwitcher.value = savedCountry;
+applyLanguage(countryConfig[savedCountry].lang);
+
+// ON CHANGE
+countrySwitcher.addEventListener("change", () => {
+  const country = countrySwitcher.value;
+  localStorage.setItem("country", country);
+
+  const lang = countryConfig[country].lang;
+  applyLanguage(lang);
 });
 </script>
 
