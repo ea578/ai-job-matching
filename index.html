@@ -17,8 +17,6 @@
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -48,17 +46,22 @@
 
     .logo span { color: var(--gold); }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
     nav a {
-      margin-left: 28px;
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
     }
 
     select {
-      margin-left: 24px;
-      padding: 6px 10px;
+      padding: 8px 12px;
       border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
     .btn {
@@ -73,13 +76,11 @@
     .btn-outline {
       border: 2px solid var(--green);
       color: var(--green);
-      margin-left: 16px;
     }
 
     .btn-primary {
       background: var(--green);
       color: white;
-      margin-left: 12px;
     }
 
     .hero {
@@ -88,10 +89,7 @@
       background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
     }
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+    .hero h1 { font-size: 48px; margin-bottom: 20px; }
 
     .hero p {
       max-width: 700px;
@@ -119,15 +117,12 @@
       background: var(--card);
       padding: 32px;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
     }
-
-    .card p { color: var(--muted); }
 
     .ai-title {
       text-align: center;
       font-size: 36px;
-      margin-bottom: 10px;
     }
 
     .ai-title span { color: var(--gold); }
@@ -139,6 +134,12 @@
       color: var(--muted);
     }
 
+    .feature {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -146,6 +147,8 @@
       color: #aaa;
       font-size: 14px;
     }
+
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 
@@ -155,127 +158,164 @@
   <div class="nav">
     <div class="logo">FindDit<span>Job</span></div>
     <nav>
-      <a href="#how-it-works" id="navJob"></a>
-      <a href="#companies" id="navCompany"></a>
-      <a href="#about" id="navAbout"></a>
+      <a href="#" data-key="nav_jobs"></a>
+      <a href="#" data-key="nav_companies"></a>
+      <a href="#" data-key="nav_about"></a>
 
-      <select id="countrySwitcher" class="lang-select">
+      <select id="countrySwitcher">
+  <!-- English-speaking -->
   <option value="US">🇺🇸 United States</option>
   <option value="GB">🇬🇧 United Kingdom</option>
   <option value="CA">🇨🇦 Canada</option>
   <option value="AU">🇦🇺 Australia</option>
   <option value="NZ">🇳🇿 New Zealand</option>
 
-  <option value="DE">🇩🇪 Germany</option>
-  <option value="AT">🇦🇹 Austria</option>
-  <option value="CH">🇨🇭 Switzerland</option>
-
-  <option value="FR">🇫🇷 France</option>
-  <option value="BE">🇧🇪 Belgium</option>
-
-  <option value="NL">🇳🇱 Netherlands</option>
-
+  <!-- Europe -->
   <option value="DK">🇩🇰 Denmark</option>
+  <option value="DE">🇩🇪 Germany</option>
+  <option value="FR">🇫🇷 France</option>
+  <option value="NL">🇳🇱 Netherlands</option>
   <option value="SE">🇸🇪 Sweden</option>
   <option value="NO">🇳🇴 Norway</option>
-  <option value="FI">🇫🇮 Finland</option>
 </select>
 
-      <a href="login.html" class="btn btn-outline" id="loginBtn"></a>
-      <a href="register.html" class="btn btn-primary" id="signupBtn"></a>
+      <a href="#" class="btn btn-outline" data-key="login"></a>
+      <a href="#" class="btn btn-primary" data-key="signup"></a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <h1 id="hero-title"></h1>
-  <p id="hero-subtitle"></p>
+  <h1 data-key="hero_title"></h1>
+  <p data-key="hero_sub"></p>
+
   <div class="hero-buttons">
-    <a href="register.html" class="btn btn-primary" id="ctaStart"></a>
-    <a href="#how-it-works" class="btn btn-outline" id="ctaHow"></a>
+    <a href="#" class="btn btn-primary" data-key="cta_start"></a>
+    <a href="#how" class="btn btn-outline" data-key="cta_how"></a>
   </div>
 </section>
 
-<section class="section" id="how-it-works">
-  <h2 id="howTitle"></h2>
+<section class="section" id="how">
   <div class="cards">
-    <div class="card"><h3 id="step1Title"></h3><p id="step1Text"></p></div>
-    <div class="card"><h3 id="step2Title"></h3><p id="step2Text"></p></div>
-    <div class="card"><h3 id="step3Title"></h3><p id="step3Text"></p></div>
+    <div class="card">
+      <h3 data-key="jobseeker_title"></h3>
+      <p data-key="jobseeker_text"></p>
+      <a class="btn btn-primary" data-key="jobseeker_btn"></a>
+    </div>
+
+    <div class="card">
+      <h3 data-key="employer_title"></h3>
+      <p data-key="employer_text"></p>
+      <a class="btn btn-outline" data-key="employer_btn"></a>
+    </div>
   </div>
 </section>
 
-<footer id="footerText"></footer>
+<section class="section">
+  <h2 class="ai-title" data-key="ai_title"></h2>
+  <p class="ai-sub" data-key="ai_sub"></p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="feature">⚡ <span data-key="f1_title"></span></div>
+      <p data-key="f1_text"></p>
+    </div>
+
+    <div class="card">
+      <div class="feature">🧠 <span data-key="f2_title"></span></div>
+      <p data-key="f2_text"></p>
+    </div>
+
+    <div class="card">
+      <div class="feature">🎯 <span data-key="f3_title"></span></div>
+      <p data-key="f3_text"></p>
+    </div>
+
+    <div class="card">
+      <div class="feature">🤝 <span data-key="f4_title"></span></div>
+      <p data-key="f4_text"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 FindDitJob – AI-drevet jobmatching
+</footer>
 
 <script>
-const countryConfig = {
-  US: { lang: "en" },
-  GB: { lang: "en" },
-  CA: { lang: "en" },
-  AU: { lang: "en" },
-  NZ: { lang: "en" },
-
-  DE: { lang: "de" },
-  AT: { lang: "de" },
-  CH: { lang: "de" },
-
-  FR: { lang: "fr" },
-  BE: { lang: "fr" },
-
-  NL: { lang: "nl" },
-
-  DK: { lang: "da" },
-  SE: { lang: "sv" },
-  NO: { lang: "no" },
-  FI: { lang: "fi" }
-};
-
-// EKSEMPEL – dine oversættelser (forkortet her)
 const translations = {
   da: {
-    heroTitle: "Find dit nye job",
-    heroText: "Upload din ansøgning og dit CV én gang..."
-  },
-  en: {
-    heroTitle: "Find your new job",
-    heroText: "Upload your application and CV once..."
-  },
-  de: {
-    heroTitle: "Finde deinen neuen Job",
-    heroText: "Lade deine Bewerbung einmal hoch..."
-  },
-  fr: {
-    heroTitle: "Trouvez votre nouvel emploi",
-    heroText: "Téléchargez votre candidature une seule fois..."
-  },
-  nl: {
-    heroTitle: "Vind je nieuwe baan",
-    heroText: "Upload je sollicitatie één keer..."
+    nav_jobs:"Job", nav_companies:"For virksomheder", nav_about:"Om os",
+    login:"Log ind", signup:"Opret bruger",
+    hero_title:"Find dit nye job",
+    hero_sub:"Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk.",
+    cta_start:"Kom i gang", cta_how:"Sådan virker det",
+    jobseeker_title:"For jobsøgere",
+    jobseeker_text:"Opret dig én gang. Upload dit CV og din ansøgning. Lad AI’en finde og søge de rigtige job for dig – uden gentagne ansøgninger.",
+    jobseeker_btn:"Jeg er jobsøger",
+    employer_title:"For arbejdsgivere",
+    employer_text:"Opret jobopslag og modtag målrettede ansøgninger fra relevante kandidater – hurtigt, præcist og helt automatisk.",
+    employer_btn:"Jeg er arbejdsgiver",
+    ai_title:"AI-drevet jobmatching i <span>topklasse</span>",
+    ai_sub:"Automatisk matching, smartere analyser og bedre resultater for både jobsøgere og virksomheder.",
+    f1_title:"Hurtigere", f1_text:"Find relevante job på sekunder – uden manuel søgning og gentagne ansøgninger.",
+    f2_title:"Smartere", f2_text:"Vores AI analyserer CV, ansøgning og jobkrav for perfekt match.",
+    f3_title:"Mere præcist", f3_text:"Kun relevante stillinger – ingen spam, ingen irrelevante opslag.",
+    f4_title:"For begge parter", f4_text:"Jobsøgere sparer tid, arbejdsgivere finder bedre kandidater hurtigere."
   }
 };
 
-function applyLanguage(lang) {
-  const t = translations[lang];
-  if (!t) return;
+function applyLang(lang){
+  localStorage.setItem("lang", lang);
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const key = el.dataset.key;
+    if(translations[lang][key]) el.innerHTML = translations[lang][key];
+  });
+}
 
-  document.getElementById("hero-title").textContent = t.heroTitle;
-  document.getElementById("hero-subtitle").textContent = t.heroText;
+<script>
+const countryToLang = {
+  US: "en",
+  GB: "en",
+  CA: "en",
+  AU: "en",
+  NZ: "en",
+
+  DK: "da",
+  DE: "de",
+  FR: "fr",
+  NL: "en",   // kan ændres til "nl" senere
+  SE: "sv",
+  NO: "no"
+};
+
+// vi bruger stadig kun de sprog, der findes i translations
+const fallbackLang = "da";
+
+function applyLang(lang){
+  if(!translations[lang]) lang = fallbackLang;
+
+  localStorage.setItem("lang", lang);
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const key = el.dataset.key;
+    if(translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
 }
 
 // LOAD SAVED COUNTRY
 const countrySwitcher = document.getElementById("countrySwitcher");
-const savedCountry = localStorage.getItem("country") || "US";
+const savedCountry = localStorage.getItem("country") || "DK";
 
 countrySwitcher.value = savedCountry;
-applyLanguage(countryConfig[savedCountry].lang);
+applyLang(countryToLang[savedCountry]);
 
 // ON CHANGE
-countrySwitcher.addEventListener("change", () => {
-  const country = countrySwitcher.value;
+countrySwitcher.addEventListener("change", e => {
+  const country = e.target.value;
   localStorage.setItem("country", country);
-
-  const lang = countryConfig[country].lang;
-  applyLanguage(lang);
+  applyLang(countryToLang[country]);
 });
 </script>
 
