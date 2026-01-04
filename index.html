@@ -247,21 +247,21 @@
     en: {
       heroTitle: "Find your new job",
       heroText:
-        "Upload your application and CV once. Our AI-powered platform automatically matches you with relevant jobs and sends applications for you.",
+        "Upload your application and CV once. Our AI-powered platform automatically matches you with relevant jobs.",
       ctaStart: "Get started",
       ctaHow: "How it works"
     },
     de: {
       heroTitle: "Finde deinen neuen Job",
       heroText:
-        "Lade deine Bewerbung und deinen Lebenslauf einmal hoch. Unsere KI-gestützte Plattform findet automatisch passende Jobs für dich.",
+        "Lade deine Bewerbung und deinen Lebenslauf einmal hoch. Unsere KI-gestützte Plattform findet passende Jobs.",
       ctaStart: "Jetzt starten",
       ctaHow: "So funktioniert es"
     },
     fr: {
       heroTitle: "Trouvez votre nouvel emploi",
       heroText:
-        "Téléchargez votre candidature et votre CV une seule fois. Notre plateforme basée sur l’IA vous met automatiquement en relation avec des emplois pertinents.",
+        "Téléchargez votre candidature et votre CV une seule fois.",
       ctaStart: "Commencer",
       ctaHow: "Comment ça marche"
     }
@@ -281,12 +281,10 @@
     localStorage.setItem("lang", lang);
   }
 
-  // load saved language
   const savedLang = localStorage.getItem("lang") || "da";
   applyLanguage(savedLang);
   if (switcher) switcher.value = savedLang;
 
-  // change language
   if (switcher) {
     switcher.addEventListener("change", () => {
       applyLanguage(switcher.value);
