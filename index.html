@@ -150,15 +150,15 @@
       <a href="#">Om os</a>
 
       <select id="languageSwitcher">
-        <option value="da">🇩🇰 Danmark</option>
-        <option value="en">🇺🇸 United States</option>
-        <option value="en">🇬🇧 United Kingdom</option>
-        <option value="de">🇩🇪 Deutschland</option>
-        <option value="fr">🇫🇷 France</option>
-        <option value="en">🇳🇱 Netherlands</option>
-        <option value="en">🇸🇪 Sweden</option>
-        <option value="en">🇳🇴 Norway</option>
-      </select>
+  <option value="da">🇩🇰 Danmark</option>
+  <option value="en-us">🇺🇸 United States</option>
+  <option value="en-gb">🇬🇧 United Kingdom</option>
+  <option value="de">🇩🇪 Deutschland</option>
+  <option value="fr">🇫🇷 France</option>
+  <option value="nl">🇳🇱 Netherlands</option>
+  <option value="sv">🇸🇪 Sweden</option>
+  <option value="no">🇳🇴 Norway</option>
+</select>
 
       <a href="login.html" class="btn btn-outline">Log ind</a>
 <a href="register.html" class="btn btn-primary">Opret bruger</a>
@@ -236,60 +236,76 @@
     });
   });
 <script>
-  const translations = {
-    da: {
-      heroTitle: "Find dit nye job",
-      heroText:
-        "Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk.",
-      ctaStart: "Kom i gang",
-      ctaHow: "Sådan virker det"
-    },
-    en: {
-      heroTitle: "Find your new job",
-      heroText:
-        "Upload your application and CV once. Our AI-powered platform automatically matches you with relevant jobs.",
-      ctaStart: "Get started",
-      ctaHow: "How it works"
-    },
-    de: {
-      heroTitle: "Finde deinen neuen Job",
-      heroText:
-        "Lade deine Bewerbung und deinen Lebenslauf einmal hoch. Unsere KI-gestützte Plattform findet passende Jobs.",
-      ctaStart: "Jetzt starten",
-      ctaHow: "So funktioniert es"
-    },
-    fr: {
-      heroTitle: "Trouvez votre nouvel emploi",
-      heroText:
-        "Téléchargez votre candidature et votre CV une seule fois.",
-      ctaStart: "Commencer",
-      ctaHow: "Comment ça marche"
-    }
-  };
+const translations = {
+  da: {
+    heroTitle: "Find dit nye job",
+    heroText: "Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk.",
+    ctaStart: "Kom i gang",
+    ctaHow: "Sådan virker det"
+  },
 
-  const switcher = document.getElementById("languageSwitcher");
+  "en-us": {
+    heroTitle: "Find your new job",
+    heroText: "Upload your application and CV once. Our AI-powered platform automatically matches you with relevant jobs and applies for you.",
+    ctaStart: "Get started",
+    ctaHow: "How it works"
+  },
 
-  function applyLanguage(lang) {
-    const t = translations[lang];
-    if (!t) return;
+  "en-gb": {
+    heroTitle: "Find your next job",
+    heroText: "Upload your CV and application once. Our AI-driven platform matches you with relevant roles automatically.",
+    ctaStart: "Get started",
+    ctaHow: "How it works"
+  },
 
-    document.getElementById("heroTitle").textContent = t.heroTitle;
-    document.getElementById("heroText").textContent = t.heroText;
-    document.getElementById("ctaStart").textContent = t.ctaStart;
-    document.getElementById("ctaHow").textContent = t.ctaHow;
+  de: {
+    heroTitle: "Finde deinen neuen Job",
+    heroText: "Lade deine Bewerbung und deinen Lebenslauf einmal hoch. Unsere KI-Plattform findet automatisch passende Jobs für dich.",
+    ctaStart: "Jetzt starten",
+    ctaHow: "So funktioniert es"
+  },
 
-    localStorage.setItem("lang", lang);
+  fr: {
+    heroTitle: "Trouvez votre nouvel emploi",
+    heroText: "Téléchargez votre candidature et votre CV une seule fois. Notre plateforme IA vous met en relation automatiquement.",
+    ctaStart: "Commencer",
+    ctaHow: "Comment ça marche"
+  },
+
+  nl: {
+    heroTitle: "Vind je nieuwe baan",
+    heroText: "Upload je CV en sollicitatie één keer. Ons AI-platform matcht je automatisch met relevante vacatures.",
+    ctaStart: "Aan de slag",
+    ctaHow: "Hoe het werkt"
+  },
+
+  sv: {
+    heroTitle: "Hitta ditt nya jobb",
+    heroText: "Ladda upp ditt CV och din ansökan en gång. Vår AI-plattform matchar dig automatiskt.",
+    ctaStart: "Kom igång",
+    ctaHow: "Så fungerar det"
+  },
+
+  no: {
+    heroTitle: "Finn din nye jobb",
+    heroText: "Last opp CV og søknad én gang. Vår AI-plattform matcher deg automatisk med relevante jobber.",
+    ctaStart: "Kom i gang",
+    ctaHow: "Slik fungerer det"
   }
+};
 
-  const savedLang = localStorage.getItem("lang") || "da";
-  applyLanguage(savedLang);
-  if (switcher) switcher.value = savedLang;
+const switcher = document.getElementById("languageSwitcher");
 
-  if (switcher) {
-    switcher.addEventListener("change", () => {
-      applyLanguage(switcher.value);
-    });
-  }
+switcher.addEventListener("change", () => {
+  const lang = switcher.value;
+  const t = translations[lang];
+  if (!t) return;
+
+  document.getElementById("heroTitle").textContent = t.heroTitle;
+  document.getElementById("heroText").textContent = t.heroText;
+  document.getElementById("ctaStart").textContent = t.ctaStart;
+  document.getElementById("ctaHow").textContent = t.ctaHow;
+});
 </script>
 
 </body>
