@@ -3,335 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <title>FindDitJob – AI-drevet jobmatching</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    html {
-  scroll-behavior: smooth;
-}
-    .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.lang-select {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  background: white;
-  font-size: 14px;
-  cursor: pointer;
-}
     :root {
       --green: #1f7a4a;
       --green-dark: #165c38;
-      --gold: #c9a24d;
+      --bg: #f6f9f7;
+      --card: #ffffff;
       --text: #0f172a;
       --muted: #475569;
-      --bg: #f6f9fc;
-      --card: #ffffff;
-      
-
+      --border: #e5e7eb;
     }
 
     * {
       box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      html {
-  scroll-behavior: smooth;
-}
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
       background: var(--bg);
+      color: var(--text);
     }
 
-    /* HEADER */
     header {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav {
+    nav {
       max-width: 1200px;
       margin: auto;
-      padding: 20px 24px;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-right {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 12px;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    nav a {
-      margin-left: 28px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
+    .lang-select {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      cursor: pointer;
     }
 
     .btn {
-      padding: 10px 18px;
-      border-radius: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
       font-weight: 600;
-      cursor: pointer;
       text-decoration: none;
       display: inline-block;
-    }
-
-    .btn-outline {
-      border: 2px solid var(--green);
-      color: var(--green);
-      margin-left: 16px;
     }
 
     .btn-primary {
       background: var(--green);
       color: white;
-      margin-left: 12px;
     }
 
-    /* HERO */
+    .btn-primary:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: white;
+    }
+
     .hero {
-      padding: 120px 24px 80px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 24px;
       text-align: center;
-      background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #f6f9fc 100%
-      );
     }
 
     .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
+      font-size: 42px;
+      margin-bottom: 16px;
     }
 
     .hero p {
+      color: var(--muted);
+      font-size: 18px;
       max-width: 700px;
       margin: auto;
-      font-size: 18px;
-      color: var(--muted);
-      line-height: 1.6;
     }
 
     .hero-buttons {
       margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    /* CARDS */
-    .section {
+    section.section {
       max-width: 1200px;
       margin: auto;
-      padding: 80px 24px;
+      padding: 64px 24px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
+      gap: 24px;
+      margin-top: 32px;
     }
 
     .card {
       background: var(--card);
-      padding: 32px;
+      padding: 24px;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    }
-
-    .card h3 {
-      margin-top: 0;
-    }
-
-    .card p {
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .card .btn {
-      margin-top: 20px;
-    }
-
-    /* AI SECTION */
-    .ai-title {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 36px;
-    }
-
-    .ai-title span {
-      color: var(--gold);
-    }
-
-    .ai-sub {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
-      color: var(--muted);
-    }
-
-    .feature {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 10px;
+      border: 1px solid var(--border);
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
-      background: #111;
-      color: #aaa;
-      font-size: 14px;
+      padding: 32px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #fff;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="nav">
-      <div class="logo">FindDit<span>Job</span></div>
-      <nav class="nav-right">
-  <a href="#">Job</a>
-  <a href="#">For virksomheder</a>
-  <a href="#">Om os</a>
+<header>
+  <nav>
+    <strong>FindDitJob</strong>
 
-  <!-- 🌍 Land & sprog -->
-  <select id="languageSwitcher" class="lang-select">
-    <option value="da-DK">🇩🇰 Danmark – Dansk</option>
-    <option value="en-US">🇺🇸 United States – English</option>
-    <option value="de-DE">🇩🇪 Deutschland – Deutsch</option>
-    <option value="fr-FR">🇫🇷 France – Français</option>
-  </select>
+    <div class="nav-right">
+      <select id="languageSwitcher" class="lang-select">
+  <option value="da-DK">🇩🇰 Danmark – Dansk</option>
+  <option value="en-US">🇺🇸 United States – English</option>
+  <option value="en-GB">🇬🇧 United Kingdom – English</option>
+  <option value="de-DE">🇩🇪 Deutschland – Deutsch</option>
+  <option value="fr-FR">🇫🇷 France – Français</option>
+  <option value="es-ES">🇪🇸 España – Español</option>
+  <option value="it-IT">🇮🇹 Italia – Italiano</option>
+  <option value="nl-NL">🇳🇱 Nederland – Nederlands</option>
+  <option value="sv-SE">🇸🇪 Sverige – Svenska</option>
+  <option value="no-NO">🇳🇴 Norge – Norsk</option>
+</select>
 
-  <a href="login.html" class="btn btn-outline">Log ind</a>
-  <a href="register.html" class="btn btn-primary">Opret bruger</a>
-</nav>
+      <a href="login.html" class="btn btn-outline">Log ind</a>
+      <a href="register.html" class="btn btn-primary">Opret bruger</a>
     </div>
-  </header>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1 id="hero-title">Find dit nye job</h1>
+<section class="hero">
+  <h1 id="hero-title">Find dit nye job</h1>
 
-<p id="hero-subtitle"></p>
-
-<a href="register.html" class="btn btn-primary" id="cta-start"></a>
-<a href="#hvordan" class="btn btn-outline" id="cta-how"></a>
-    
-</div>
-  </section>
-<section id="hvordan" class="section how-it-works">
-  <h2>Sådan virker FindDitJob</h2>
-  <p class="ai-sub">
-    Find dit næste job uden at søge igen og igen. Vores AI klarer arbejdet for dig.
+  <p id="hero-subtitle">
+    Upload din ansøgning og dit CV én gang.
+    Vores <strong>AI-drevne platform</strong> matcher dig automatisk
+    med relevante job og sender ansøgninger for dig – helt automatisk.
   </p>
+
+  <div class="hero-buttons">
+    <a href="register.html" class="btn btn-primary" id="cta-start">Kom i gang</a>
+    <a href="#how" class="btn btn-outline" id="cta-how">Sådan virker det</a>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <h2>Sådan virker FindDitJob</h2>
 
   <div class="cards">
     <div class="card">
-      <div class="feature">1</div>
-      <h3>Upload CV & ansøgning</h3>
-      <p>
-        Upload dit CV og din ansøgning én gang. Du slipper for gentagne ansøgninger.
-      </p>
+      <h3>1. Upload CV & ansøgning</h3>
+      <p>Du uploader én gang – ingen gentagelser.</p>
     </div>
 
     <div class="card">
-      <div class="feature">2</div>
-      <h3>AI matcher dig</h3>
-      <p>
-        Vores AI analyserer dine kompetencer og matcher dig kun med relevante job.
-      </p>
+      <h3>2. AI matcher dig</h3>
+      <p>Vores AI analyserer dine kompetencer og jobkrav.</p>
     </div>
 
     <div class="card">
-      <div class="feature">3</div>
-      <h3>Vi søger for dig</h3>
-      <p>
-        Systemet sender ansøgninger automatisk og holder dig opdateret.
-      </p>
+      <h3>3. Vi søger for dig</h3>
+      <p>Systemet sender ansøgninger automatisk.</p>
     </div>
   </div>
 </section>
 
-
-  <!-- JOBSØGER / ARBEJDSGIVER -->
-  <section class="section">
-    <div class="cards">
-      <div class="card">
-        <h3>For jobsøgere</h3>
-        <p>
-          Opret dig én gang. Upload dit CV og din ansøgning.
-          Lad AI’en finde og søge de rigtige job for dig –
-          uden gentagne ansøgninger.
-        </p>
-        <a href="jobseeker.html" class="btn btn-primary">Jeg er jobsøger</a>
-      </div>
-      <div class="card">
-        <h3>For arbejdsgivere</h3>
-        <p>
-          Opret jobopslag og modtag målrettede ansøgninger
-          fra relevante kandidater – hurtigt, præcist
-          og helt automatisk.
-        </p>
-        <a href="employer.html" class="btn btn-primary">Jeg er arbejdsgiver</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI MATCHING -->
-  <section class="section">
-    <h2 class="ai-title">AI-drevet jobmatching <span>i topklasse</span></h2>
-    <p class="ai-sub">
-      Automatisk matching, smartere analyser og bedre resultater
-      for både jobsøgere og virksomheder.
-    </p>
-
-    <div class="cards">
-      <div class="card">
-        <div class="feature">⚡ Hurtigere</div>
-        <p>
-          Find relevante job på sekunder – uden manuel søgning
-          og gentagne ansøgninger.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="feature">🧠 Smartere</div>
-        <p>
-          AI analyserer CV, ansøgning og jobkrav
-          for det mest præcise match.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="feature">🎯 Mere præcist</div>
-        <p>
-          Kun relevante stillinger – ingen spam,
-          ingen irrelevante opslag.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="feature">🤝 For begge parter</div>
-        <p>
-          Jobsøgere sparer tid, arbejdsgivere finder
-          bedre kandidater hurtigere.
-        </p>
-      </div>
-    </div>
-  </section>
 <footer>
   © 2026 FindDitJob – AI-drevet jobmatching
 </footer>
@@ -340,73 +204,37 @@
   const langSwitcher = document.getElementById("languageSwitcher");
 
   const translations = {
-  "da-DK": {
-  heroTitle: "Find dit nye job",
-  heroSubtitle:
-    "Upload din ansøgning og dit CV én gang. Vores <strong>AI-drevne platform</strong> matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk.",
-  ctaStart: "Kom i gang",
-  ctaHow: "Sådan virker det"
-},
-
-"en-US": {
-  heroTitle: "Find your new job",
-  heroSubtitle:
-    "Upload your application and CV once. Our <strong>AI-powered platform</strong> automatically matches you with relevant jobs and sends applications for you.",
-  ctaStart: "Get started",
-  ctaHow: "How it works"
-},
-
-"de-DE": {
-  heroTitle: "Finde deinen neuen Job",
-  heroSubtitle:
-    "Lade deine Bewerbung und deinen Lebenslauf einmal hoch. Unsere KI-gestützte Plattform findet automatisch passende Jobs für dich.",
-  ctaStart: "Jetzt starten",
-  ctaHow: "So funktioniert es"
-},
-
-"fr-FR": {
-  heroTitle: "Trouvez votre nouvel emploi",
-  heroSubtitle:
-    "Téléchargez votre candidature et votre CV une seule fois. Notre plateforme basée sur l’IA vous met automatiquement en relation avec des emplois pertinents.",
-  ctaStart: "Commencer",
-  ctaHow: "Comment ça marche"
-}
-
-  "en-US": {
-    heroTitle: "Find your new job",
-    heroSubtitle:
-      "Upload your application and CV once. Our AI-powered platform automatically matches you with relevant jobs and sends applications for you."
-  },
-  "de-DE": {
-    heroTitle: "Finde deinen neuen Job",
-    heroSubtitle:
-      "Lade deine Bewerbung und deinen Lebenslauf einmal hoch. Unsere KI-gestützte Plattform findet automatisch passende Jobs für dich."
-  },
-  "fr-FR": {
-    heroTitle: "Trouvez votre nouvel emploi",
-    heroSubtitle:
-      "Téléchargez votre candidature et votre CV une seule fois. Notre plateforme basée sur l’IA vous met automatiquement en relation avec des emplois pertinents."
-  }
+    "da-DK": {
+      heroTitle: "Find dit nye job",
+      heroSubtitle:
+        "Upload din ansøgning og dit CV én gang. Vores <strong>AI-drevne platform</strong> matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk.",
+      ctaStart: "Kom i gang",
+      ctaHow: "Sådan virker det"
+    },
+    "en-US": {
+      heroTitle: "Find your new job",
+      heroSubtitle:
+        "Upload your application and CV once. Our <strong>AI-powered platform</strong> automatically matches you with relevant jobs and sends applications for you.",
+      ctaStart: "Get started",
+      ctaHow: "How it works"
+    }
   };
 
- function applyLanguage(lang) {
-  const t = translations[lang];
-  if (!t) return;
+  function applyLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
 
-  document.getElementById("hero-title").textContent = t.heroTitle;
-  document.getElementById("hero-subtitle").innerHTML = t.heroSubtitle;
+    document.getElementById("hero-title").textContent = t.heroTitle;
+    document.getElementById("hero-subtitle").innerHTML = t.heroSubtitle;
+    document.getElementById("cta-start").textContent = t.ctaStart;
+    document.getElementById("cta-how").textContent = t.ctaHow;
+  }
 
-  document.getElementById("cta-start").textContent = t.ctaStart;
-  document.getElementById("cta-how").textContent = t.ctaHow;
-}
-
-
-  // load saved language
   const savedLang = localStorage.getItem("language") || "da-DK";
+  applyLanguage(savedLang);
+
   if (langSwitcher) {
     langSwitcher.value = savedLang;
-    applyLanguage(savedLang);
-
     langSwitcher.addEventListener("change", () => {
       localStorage.setItem("language", langSwitcher.value);
       applyLanguage(langSwitcher.value);
