@@ -236,6 +236,44 @@
     });
   });
 </script>
+const translations = {
+  da: {
+    heroTitle: "Find dit nye job",
+    heroText: "Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk.",
+    ctaStart: "Kom i gang",
+    ctaHow: "Sådan virker det"
+  },
+  en: {
+    heroTitle: "Find your new job",
+    heroText: "Upload your application and CV once. Our AI-powered platform automatically matches you with relevant jobs and applies for you.",
+    ctaStart: "Get started",
+    ctaHow: "How it works"
+  },
+  de: {
+    heroTitle: "Finde deinen neuen Job",
+    heroText: "Lade deine Bewerbung und deinen Lebenslauf einmal hoch. Unsere KI-Plattform findet automatisch passende Jobs für dich.",
+    ctaStart: "Jetzt starten",
+    ctaHow: "So funktioniert es"
+  },
+  fr: {
+    heroTitle: "Trouvez votre nouvel emploi",
+    heroText: "Téléchargez votre candidature et CV une seule fois. Notre plateforme IA vous associe automatiquement aux bons emplois.",
+    ctaStart: "Commencer",
+    ctaHow: "Comment ça marche"
+  }
+};
 
+const switcher = document.getElementById("languageSwitcher");
+
+switcher.addEventListener("change", () => {
+  const lang = switcher.value;
+  const t = translations[lang];
+
+  document.getElementById("heroTitle").textContent = t.heroTitle;
+  document.getElementById("heroText").textContent = t.heroText;
+  document.getElementById("ctaStart").textContent = t.ctaStart;
+  document.getElementById("ctaHow").textContent = t.ctaHow;
+});
+</script>
 </body>
 </html>
