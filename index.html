@@ -305,10 +305,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* Language switcher */
 const switcher = document.getElementById("languageSwitcher");
-  
+
+console.log("switcher:", switcher);
+console.log("translations:", translations);
+
 switcher.addEventListener("change", () => {
   const lang = switcher.value;
   const t = translations[lang];
+  console.log("lang:", lang, "t:", t);
   if (!t) return;
 
   document.getElementById("heroTitle").textContent = t.heroTitle;
