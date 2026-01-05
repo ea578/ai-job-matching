@@ -320,7 +320,7 @@ if (switcher) {
     document.getElementById("ctaHow").textContent = t.ctaHow;
 
     /* VIGTIGT – split title korrekt */
-    document.getElementById("aiTitleMain").textContent = t.aiTitle;
+    document.getElementById("aiTitle").childNodes[0].textContent = t.aiTitle + " ";
 document.getElementById("aiTitleSpan").textContent = " " + t.aiTitleSpan;
     document.getElementById("aiSub").textContent = t.aiSub;
   });
