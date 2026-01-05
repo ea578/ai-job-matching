@@ -209,11 +209,12 @@
   </div>
 </section>
 <section id="how" class="section">
-  <h2 class="ai-title">AI-drevet jobmatching <span>i topklasse</span></h2>
-  <p class="ai-sub">
-    Automatisk matching, smartere analyser og bedre resultater
-    for både jobsøgere og virksomheder.
-  </p>
+  <h2 id="aiTitle" class="ai-title">
+  AI-drevet jobmatching <span id="aiTitleSpan">i topklasse</span>
+</h2>
+  <p id="aiSub" class="ai-sub">
+  Automatisk matching, smartere analyser og bedre resultater for både jobsøgere og virksomheder.
+</p>
 
   <div class="cards">
     <div class="card">⚡ Hurtigere<br>Find job på sekunder.</div>
@@ -234,6 +235,9 @@ const translations = {
     heroText: "Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk med relevante job og sender ansøgninger for dig – helt automatisk.",
     ctaStart: "Kom i gang",
     ctaHow: "Sådan virker det"
+    aiTitle: "AI-drevet jobmatching",
+aiTitleSpan: "i topklasse",
+aiSub: "Automatisk matching, smartere analyser og bedre resultater for både jobsøgere og virksomheder."
   },
 
   "en-us": {
@@ -241,6 +245,9 @@ const translations = {
     heroText: "Upload your application and CV once. Our AI-powered platform automatically matches you with relevant jobs and applies for you.",
     ctaStart: "Get started",
     ctaHow: "How it works"
+    aiTitle: "AI-powered job matching",
+aiTitleSpan: "world class",
+aiSub: "Automatic matching, smarter analysis and better results for job seekers and employers."
   },
 
   "en-gb": {
@@ -297,6 +304,9 @@ switcher.addEventListener("change", () => {
   document.getElementById("heroText").textContent = t.heroText;
   document.getElementById("ctaStart").textContent = t.ctaStart;
   document.getElementById("ctaHow").textContent = t.ctaHow;
+  document.getElementById("aiTitle").textContent = t.aiTitle;
+document.getElementById("aiTitleSpan").textContent = t.aiTitleSpan;
+document.getElementById("aiSub").textContent = t.aiSub;
 });
 
 /* Smooth scroll */
