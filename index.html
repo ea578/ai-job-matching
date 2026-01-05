@@ -293,18 +293,21 @@ aiSub: "Automatic matching, smarter analysis and better results for job seekers 
 };
 
 <script>
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", e => {
-      e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute("href"));
-      if (target) target.scrollIntoView({ behavior: "smooth" });
-    });
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   });
+});
 
-  // Language switcher
-  const switcher = document.getElementById("languageSwitcher");
+/* Language switcher */
+const switcher = document.getElementById("languageSwitcher");
 
+if (switcher) {
   switcher.addEventListener("change", () => {
     const lang = switcher.value;
     const t = translations[lang];
@@ -314,10 +317,17 @@ aiSub: "Automatic matching, smarter analysis and better results for job seekers 
     document.getElementById("heroText").textContent = t.heroText;
     document.getElementById("ctaStart").textContent = t.ctaStart;
     document.getElementById("ctaHow").textContent = t.ctaHow;
-    document.getElementById("aiTitle").childNodes[0].textContent = t.aiTitle + " ";
+
+    /* VIGTIGT – split title korrekt */
+    document.getElementById("aiTitle").childNodes[0].textContent =
+      t.aiTitle + " ";
     document.getElementById("aiTitleSpan").textContent = t.aiTitleSpan;
     document.getElementById("aiSub").textContent = t.aiSub;
   });
+
+  /* Trigger én gang ved load */
+  switcher.dispatchEvent(new Event("change"));
+}
 </script>
 
 </body>
