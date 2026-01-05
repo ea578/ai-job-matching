@@ -315,10 +315,14 @@ switcher.addEventListener("change", () => {
   document.getElementById("heroText").textContent = t.heroText;
   document.getElementById("ctaStart").textContent = t.ctaStart;
   document.getElementById("ctaHow").textContent = t.ctaHow;
-  document.getElementById("aiTitle").textContent = t.aiTitle;
-document.getElementById("aiTitleSpan").textContent = t.aiTitleSpan;
-document.getElementById("aiSub").textContent = t.aiSub;
+
+  document.getElementById("aiTitle").childNodes[0].nodeValue = t.aiTitle + " ";
+  document.getElementById("aiTitleSpan").textContent = t.aiTitleSpan;
+  document.getElementById("aiSub").textContent = t.aiSub;
 });
+
+switcher.dispatchEvent(new Event("change"));
+
 </script>
 </body>
 </html>
