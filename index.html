@@ -292,22 +292,6 @@ aiSub: "Automatic matching, smarter analysis and better results for job seekers 
     ctaHow: "Slik fungerer det"
   }
 };
-  
-const switcher = document.getElementById("languageSwitcher");
-
-switcher.addEventListener("change", () => {
-  const lang = switcher.value;
-  const t = translations[lang];
-  if (!t) return;
-
-  document.getElementById("heroTitle").textContent = t.heroTitle;
-  document.getElementById("heroText").textContent = t.heroText;
-  document.getElementById("ctaStart").textContent = t.ctaStart;
-  document.getElementById("ctaHow").textContent = t.ctaHow;
-  document.getElementById("aiTitle").textContent = t.aiTitle;
-document.getElementById("aiTitleSpan").textContent = t.aiTitleSpan;
-document.getElementById("aiSub").textContent = t.aiSub;
-});
 
 /* Smooth scroll */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -331,6 +315,9 @@ switcher.addEventListener("change", () => {
   document.getElementById("heroText").textContent = t.heroText;
   document.getElementById("ctaStart").textContent = t.ctaStart;
   document.getElementById("ctaHow").textContent = t.ctaHow;
+  document.getElementById("aiTitle").textContent = t.aiTitle;
+document.getElementById("aiTitleSpan").textContent = t.aiTitleSpan;
+document.getElementById("aiSub").textContent = t.aiSub;
 });
 </script>
 </body>
