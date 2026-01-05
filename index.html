@@ -292,40 +292,37 @@ aiSub: "Automatic matching, smarter analysis and better results for job seekers 
   }
 };
 
-/* Smooth scroll */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", e => {
-    e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
+<footer>
+  © 2026 FindDitJob – AI-drevet jobmatching
+</footer>
+
 <script>
-/* Language switcher */
-const switcher = document.getElementById("languageSwitcher");
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(anchor.getAttribute("href"));
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    });
+  });
 
-console.log("switcher:", switcher);
-console.log("translations:", translations);
+  // Language switcher
+  const switcher = document.getElementById("languageSwitcher");
 
-switcher.addEventListener("change", () => {
-  const lang = switcher.value;
-  const t = translations[lang];
-  console.log("lang:", lang, "t:", t);
-  if (!t) return;
+  switcher.addEventListener("change", () => {
+    const lang = switcher.value;
+    const t = translations[lang];
+    if (!t) return;
 
-  document.getElementById("heroTitle").textContent = t.heroTitle;
-  document.getElementById("heroText").textContent = t.heroText;
-  document.getElementById("ctaStart").textContent = t.ctaStart;
-  document.getElementById("ctaHow").textContent = t.ctaHow;
-
-  document.getElementById("aiTitle").childNodes[0].nodeValue = t.aiTitle + " ";
-  document.getElementById("aiTitleSpan").textContent = t.aiTitleSpan;
-  document.getElementById("aiSub").textContent = t.aiSub;
-});
-
-switcher.dispatchEvent(new Event("change"));
-
+    document.getElementById("heroTitle").textContent = t.heroTitle;
+    document.getElementById("heroText").textContent = t.heroText;
+    document.getElementById("ctaStart").textContent = t.ctaStart;
+    document.getElementById("ctaHow").textContent = t.ctaHow;
+    document.getElementById("aiTitle").childNodes[0].textContent = t.aiTitle + " ";
+    document.getElementById("aiTitleSpan").textContent = t.aiTitleSpan;
+    document.getElementById("aiSub").textContent = t.aiSub;
+  });
 </script>
+
 </body>
 </html>
