@@ -351,6 +351,7 @@ if (switcher) {
     const lang = switcher.value;
     const t = translations[lang];
     if (!t) return;
+    localStorage.setItem("lang", lang);
 
     document.getElementById("heroTitle").textContent = t.heroTitle;
     document.getElementById("heroText").textContent = t.heroText;
