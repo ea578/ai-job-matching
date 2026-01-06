@@ -374,6 +374,11 @@ document.getElementById("employerBtn").textContent = t.employerBtn;
   });
 
   /* Trigger én gang ved load */
+const savedLang = localStorage.getItem("lang");
+if (savedLang && translations[savedLang]) {
+  switcher.value = savedLang;
+}
+
   switcher.dispatchEvent(new Event("change"));
 }
 </script>
