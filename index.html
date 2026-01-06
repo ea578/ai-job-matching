@@ -363,9 +363,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* Language switcher */
 const switcher = document.getElementById("languageSwitcher");
 
-document.getElementById("navLogin").textContent = t.navLogin;
-document.getElementById("navRegister").textContent = t.navRegister;
-
 if (switcher) {
   switcher.addEventListener("change", () => {
     const lang = switcher.value;
@@ -377,6 +374,9 @@ if (switcher) {
     document.getElementById("heroText").textContent = t.heroText;
     document.getElementById("ctaStart").textContent = t.ctaStart;
     document.getElementById("ctaHow").textContent = t.ctaHow;
+    
+document.getElementById("navLogin").textContent = t.navLogin;
+document.getElementById("navRegister").textContent = t.navRegister;
 
     /* VIGTIGT – split title korrekt */
     document.getElementById("aiTitle").childNodes[0].textContent = t.aiTitle + " ";
