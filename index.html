@@ -468,15 +468,15 @@ document.getElementById("employerBtn").textContent = t.employerBtn;
   /* Trigger én gang ved load */
 const savedLang = localStorage.getItem("lang");
 
-// Default = English (US)
-if (savedLang && translations[savedLang]) {
-  switcher.value = savedLang;
-} else {
+// FORCE English first time
+if (!savedLang) {
+  localStorage.setItem("lang", "en-us");
   switcher.value = "en-us";
+} else if (translations[savedLang]) {
+  switcher.value = savedLang;
 }
 
 switcher.dispatchEvent(new Event("change"));
-
 </script>
 
 </body>
