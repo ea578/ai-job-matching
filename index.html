@@ -420,7 +420,8 @@ if (switcher) {
   switcher.addEventListener("change", () => {
     const lang = switcher.value;
     const t = translations[lang];
-    if (!t) return;
+console.log("Language:", lang, t);
+if (!t) return;
     localStorage.setItem("lang", lang);
 
     document.getElementById("heroTitle").textContent = t.heroTitle;
