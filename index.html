@@ -467,12 +467,16 @@ document.getElementById("employerBtn").textContent = t.employerBtn;
 
   /* Trigger én gang ved load */
 const savedLang = localStorage.getItem("lang");
+
+// Default = English (US)
 if (savedLang && translations[savedLang]) {
   switcher.value = savedLang;
+} else {
+  switcher.value = "en-us";
 }
 
-  switcher.dispatchEvent(new Event("change"));
-}
+switcher.dispatchEvent(new Event("change"));
+
 </script>
 
 </body>
