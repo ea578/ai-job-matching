@@ -155,8 +155,9 @@
 </div>
 
       <select id="languageSwitcher">
+  <select id="languageSwitcher">
+  <option value="da">Dansk</option>
   <option value="en-us">English (US)</option>
-<option value="da">Dansk</option>
   <option value="en-gb">English (UK)</option>
   <option value="de">Deutsch</option>
   <option value="fr">Français</option>
@@ -269,56 +270,50 @@
 
 <script>
 const translations = {
+  const translations = {
   da: {
-  navLogin: "Log ind",
-  navRegister: "Opret bruger",
-  navJobs: "Job",
-  navCompanies: "For virksomheder",
-  navAbout: "Om os",
+    navLogin: "Log ind",
+    navRegister: "Opret bruger",
+    navJobs: "Job",
+    navCompanies: "For virksomheder",
+    navAbout: "Om os",
 
-  heroTitle: "Find dit nye job",
-  heroText:
-    "Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk med relevante job og søger for dig.",
-  ctaStart: "Kom i gang",
-  ctaHow: "Sådan virker det",
+    heroTitle: "Find dit nye job",
+    heroText: "Upload din ansøgning og dit CV én gang. Vores AI-drevne platform matcher dig automatisk.",
+    ctaStart: "Kom i gang",
+    ctaHow: "Sådan virker det",
 
-  aiTitle: "AI-drevet jobmatching",
-  aiTitleSpan: "i topklasse",
-  aiSub:
-    "Automatisk matching, smartere analyser og bedre resultater for både jobsøgere og virksomheder.",
+    aiTitle: "AI-drevet jobmatching",
+    aiTitleSpan: "i topklasse",
+    aiSub: "Automatisk matching, smartere analyser og bedre resultater.",
 
-  featureFastTitle: "Hurtigere",
-  featureFastText: "Find job på sekunder.",
-  featureFastDesc:
-    "Upload dit CV én gang, så finder systemet automatisk relevante job for dig.",
+    jobseekerTitle: "For jobsøgere",
+    jobseekerText: "Opret dig én gang. Upload dit CV og din ansøgning.",
+    jobseekerBtn: "Jeg er jobsøger",
 
-  featureSmartTitle: "Smartere",
-  featureSmartText: "AI matcher præcist.",
-  featureSmartDesc:
-    "Vores AI analyserer dine kompetencer og matcher dig kun med job, der passer til dig.",
+    employerTitle: "For arbejdsgivere",
+    employerText: "Opret jobopslag og modtag målrettede ansøgninger.",
+    employerBtn: "Jeg er arbejdsgiver",
 
-  featurePreciseTitle: "Mere præcist",
-  featurePreciseText: "Ingen spam.",
-  featurePreciseDesc:
-    "Du slipper for irrelevante stillinger og unødvendige ansøgninger.",
+    featureFastTitle: "Hurtigere",
+    featureFastText: "Find job på sekunder.",
+    featureFastDesc: "Upload dit CV én gang.",
 
-  featureBothTitle: "For begge parter",
-  featureBothText: "Alle sparer tid.",
-  featureBothDesc:
-    "Jobsøgere og virksomheder får hurtigere og bedre matches.",
+    featureSmartTitle: "Smartere",
+    featureSmartText: "AI matcher præcist.",
+    featureSmartDesc: "Matcher kun relevante job.",
 
-  jobseekerTitle: "For jobsøgere",
-  jobseekerText:
-    "Opret dig én gang. Upload dit CV og din ansøgning. Lad AI’en finde de rigtige job for dig.",
-  jobseekerBtn: "Jeg er jobsøger",
+    featurePreciseTitle: "Mere præcist",
+    featurePreciseText: "Ingen spam.",
+    featurePreciseDesc: "Kun relevante stillinger.",
 
-  employerTitle: "For arbejdsgivere",
-  employerText:
-    "Opret jobopslag og modtag målrettede ansøgninger fra relevante kandidater.",
-  employerBtn: "Jeg er arbejdsgiver",
+    featureBothTitle: "For begge parter",
+    featureBothText: "Alle sparer tid.",
+    featureBothDesc: "Bedre matches hurtigere.",
 
-  footerText: "© 2026 FindDitJob – AI-drevet jobmatching"
-},
+    footerText: "© 2026 FindDitJob – AI-drevet jobmatching"
+  }
+};
 
   "en-us": {
   navLogin: "Log in",
