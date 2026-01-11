@@ -413,6 +413,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* Language switcher */
 const switcher = document.getElementById("languageSwitcher");
+const savedLang = localStorage.getItem("lang");
 
 if (switcher) {
   switcher.addEventListener("change", () => {
