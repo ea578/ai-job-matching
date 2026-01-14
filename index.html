@@ -773,7 +773,7 @@ document.getElementById("jobseekerBtn").textContent = t.jobseekerBtn;
 document.getElementById("employerTitle").textContent = t.employerTitle;
 document.getElementById("employerText").textContent = t.employerText;
 document.getElementById("employerBtn").textContent = t.employerBtn;
-  });
+  
 
   // FORCE English first time
 if (!savedLang) {
@@ -781,7 +781,7 @@ if (!savedLang) {
   switcher.value = "en-us";
 } else if (translations[savedLang]) {
   switcher.value = savedLang;
-}
+});
 
 switcher.dispatchEvent(new Event("change"));
 
