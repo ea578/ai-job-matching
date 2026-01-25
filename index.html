@@ -775,13 +775,13 @@ document.getElementById("employerText").textContent = t.employerText;
 document.getElementById("employerBtn").textContent = t.employerBtn;
   
 
-  // FORCE English first time
-if (!savedLang) {
-  localStorage.setItem("lang", "en-us");
-  switcher.value = "en-us";
-} else if (translations[savedLang]) {
+  // Load saved language or default
+if (translations[savedLang]) {
   switcher.value = savedLang;
-});
+} else {
+  switcher.value = "en-us";
+  localStorage.setItem("lang", "en-us");
+}
 
 switcher.dispatchEvent(new Event("change"));
 
