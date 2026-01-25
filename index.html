@@ -714,8 +714,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
+  });
 });
-  
+
 /* Language switcher */
 const switcher = document.getElementById("languageSwitcher");
 const savedLang = localStorage.getItem("lang");
@@ -775,16 +776,14 @@ document.getElementById("employerBtn").textContent = t.employerBtn;
   
 
   // Load saved language or default
-if (translations[savedLang]) {
-  switcher.value = savedLang;
-} else {
-  switcher.value = "en-us";
-  localStorage.setItem("lang", "en-us");
-}
+const defaultLang = savedLang && translations[savedLang]
+  ? savedLang
+  : "da-dk";
+
+switcher.value = defaultLang;
 
 switcher.dispatchEvent(new Event("change"));
-    
-});
+
 </script>
 
 </body>
