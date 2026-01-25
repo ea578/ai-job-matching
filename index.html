@@ -714,7 +714,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
-
+});
+  
 /* Language switcher */
 const switcher = document.getElementById("languageSwitcher");
 const savedLang = localStorage.getItem("lang");
