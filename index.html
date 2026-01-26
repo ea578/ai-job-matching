@@ -775,9 +775,15 @@ document.getElementById("employerText").textContent = t.employerText;
 document.getElementById("employerBtn").textContent = t.employerBtn;
   
 // Load saved language or default
-const defaultLang = savedLang || "en-us";
+let defaultLang = "en-us";
+
+if (savedLang && translations[savedLang]) {
+  defaultLang = savedLang;
+}
 
 switcher.value = defaultLang;
+
+// trigger change manually
 switcher.dispatchEvent(new Event("change"));
 });
 }
