@@ -774,14 +774,10 @@ document.getElementById("employerTitle").textContent = t.employerTitle;
 document.getElementById("employerText").textContent = t.employerText;
 document.getElementById("employerBtn").textContent = t.employerBtn;
   
-
-  // Load saved language or default
-const defaultLang = savedLang && translations[savedLang]
-  ? savedLang
-  : "en-us";
+// Load saved language or default
+const defaultLang = savedLang || "en-us";
 
 switcher.value = defaultLang;
-
 switcher.dispatchEvent(new Event("change"));
 });
 }
