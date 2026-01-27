@@ -717,7 +717,82 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+/* Language switcher */
 
+const switcher = document.getElementById("languageSwitcher");
+const savedLang = localStorage.getItem("lang");
+
+function applyLanguage(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  // Save choice
+  localStorage.setItem("lang", lang);
+
+  // Hero
+  document.getElementById("heroTitle").textContent = t.heroTitle;
+  document.getElementById("heroText").textContent = t.heroText;
+  document.getElementById("ctaStart").textContent = t.ctaStart;
+  document.getElementById("ctaHow").textContent = t.ctaHow;
+
+  // Navigation
+  document.getElementById("navLogin").textContent = t.navLogin;
+  document.getElementById("navRegister").textContent = t.navRegister;
+  document.getElementById("navJobs").textContent = t.navJobs;
+  document.getElementById("navCompanies").textContent = t.navCompanies;
+  document.getElementById("navAbout").textContent = t.navAbout;
+
+  // Features
+  document.getElementById("featureFastTitle").textContent = t.featureFastTitle;
+  document.getElementById("featureFastText").textContent = t.featureFastText;
+  document.getElementById("featureFastDesc").textContent = t.featureFastDesc;
+
+  document.getElementById("featureSmartTitle").textContent = t.featureSmartTitle;
+  document.getElementById("featureSmartText").textContent = t.featureSmartText;
+  document.getElementById("featureSmartDesc").textContent = t.featureSmartDesc;
+
+  document.getElementById("featurePreciseTitle").textContent = t.featurePreciseTitle;
+  document.getElementById("featurePreciseText").textContent = t.featurePreciseText;
+  document.getElementById("featurePreciseDesc").textContent = t.featurePreciseDesc;
+
+  document.getElementById("featureBothTitle").textContent = t.featureBothTitle;
+  document.getElementById("featureBothText").textContent = t.featureBothText;
+  document.getElementById("featureBothDesc").textContent = t.featureBothDesc;
+
+  // Cards
+  document.getElementById("jobseekerTitle").textContent = t.jobseekerTitle;
+  document.getElementById("jobseekerText").textContent = t.jobseekerText;
+  document.getElementById("jobseekerBtn").textContent = t.jobseekerBtn;
+
+  document.getElementById("employerTitle").textContent = t.employerTitle;
+  document.getElementById("employerText").textContent = t.employerText;
+  document.getElementById("employerBtn").textContent = t.employerBtn;
+
+  // AI section
+  document.getElementById("aiTitleMain").textContent = t.aiTitle;
+  document.getElementById("aiTitleSpan").textContent = " " + t.aiTitleSpan;
+  document.getElementById("aiSub").textContent = t.aiSub;
+
+  // Footer
+  document.getElementById("footerText").textContent = t.footerText;
+}
+
+/* On change */
+if (switcher) {
+  switcher.addEventListener("change", () => {
+    applyLanguage(switcher.value);
+  });
+}
+
+/* Load on startup */
+let defaultLang = "en-us";
+
+if (savedLang && translations[savedLang]) {
+  defaultLang = savedLang;
+}
+
+switcher.value = defaultLang;
+applyLanguage(defaultLang);
 
 </script>
 </body>
