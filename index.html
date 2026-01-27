@@ -775,15 +775,13 @@ document.getElementById("employerText").textContent = t.employerText;
 document.getElementById("employerBtn").textContent = t.employerBtn;
   
 // Load saved language or default
-let defaultLang = "en-us";
-
-if (savedLang && translations[savedLang]) {
-  defaultLang = savedLang;
-}
+let defaultLang = savedLang && translations[savedLang]
+  ? savedLang
+  : "en-us";
 
 switcher.value = defaultLang;
 
-// trigger change manually
+// trigger once
 switcher.dispatchEvent(new Event("change"));
 });
 }
