@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Log ind – FindDitJob</title>
@@ -21,8 +21,7 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
+      font-family: system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       display: flex;
@@ -37,7 +36,7 @@
       max-width: 420px;
       padding: 48px 40px;
       border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
       text-align: center;
     }
 
@@ -47,12 +46,12 @@
       margin-bottom: 12px;
     }
 
-    .logo span.job {
+    .logo span {
       color: var(--gold);
     }
 
     h1 {
-      margin: 8px 0 6px;
+      margin: 8px 0;
       font-size: 26px;
     }
 
@@ -126,38 +125,48 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="login-card">
+
     <div class="logo">
-      FindDit<span class="job">Job</span>
+      FindDit<span>Job</span>
     </div>
 
     <h1 id="loginTitle">Log ind</h1>
-<p class="subtitle" id="loginSubtitle">
-Velkommen tilbage – log ind for at fortsætte
-</p>
+
+    <p class="subtitle" id="loginSubtitle">
+      Velkommen tilbage – log ind for at fortsætte
+    </p>
 
     <form>
+
       <div class="field">
-        <label>Email</label>
+        <label id="emailLabel">Email</label>
         <input type="email" placeholder="din@email.dk" />
       </div>
 
       <div class="field">
-        <label>Adgangskode</label>
+        <label id="passwordLabel">Adgangskode</label>
         <input type="password" placeholder="••••••••" />
       </div>
 
-      <button class="btn" type="submit">Log ind</button>
+      <button class="btn" type="submit" id="loginBtn">
+        Log ind
+      </button>
+
     </form>
 
     <div class="footer-text">
-      Har du ikke en konto?
-      <a href="register.html">Opret bruger</a>
+      <span id="noAccountText">Har du ikke en konto?</span>
+      <a href="register.html" id="registerLink">Opret bruger</a>
     </div>
 
-    <a href="index.html" class="back-link">← Tilbage til forsiden</a>
+    <a href="index.html" class="back-link" id="backHome">
+      ← Tilbage til forsiden
+    </a>
+
   </div>
 
 </body>
