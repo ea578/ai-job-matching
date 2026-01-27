@@ -168,6 +168,62 @@
     </a>
 
   </div>
+<script>
+/* Login translations */
 
+const translations = {
+  "en-us": {
+    title: "Login",
+    subtitle: "Welcome back – log in to continue",
+    email: "Email",
+    password: "Password",
+    button: "Login",
+    noAccount: "Don't have an account?",
+    register: "Create account",
+    back: "← Back to homepage"
+  },
+
+  "da-dk": {
+    title: "Log ind",
+    subtitle: "Velkommen tilbage – log ind for at fortsætte",
+    email: "Email",
+    password: "Adgangskode",
+    button: "Log ind",
+    noAccount: "Har du ikke en konto?",
+    register: "Opret bruger",
+    back: "← Tilbage til forsiden"
+  },
+
+  "en-gb": {
+    title: "Log in",
+    subtitle: "Welcome back – log in to continue",
+    email: "Email",
+    password: "Password",
+    button: "Log in",
+    noAccount: "Don't have an account?",
+    register: "Create account",
+    back: "← Back to homepage"
+  }
+};
+
+
+/* Load saved language */
+
+const savedLang = localStorage.getItem("lang") || "en-us";
+const t = translations[savedLang] || translations["en-us"];
+
+
+/* Apply translation */
+
+document.getElementById("loginTitle").textContent = t.title;
+document.getElementById("loginSubtitle").textContent = t.subtitle;
+document.getElementById("emailLabel").textContent = t.email;
+document.getElementById("passwordLabel").textContent = t.password;
+document.getElementById("loginBtn").textContent = t.button;
+document.getElementById("noAccountText").textContent = t.noAccount;
+document.getElementById("registerLink").textContent = t.register;
+document.getElementById("backHome").textContent = t.back;
+
+</script>
 </body>
 </html>
