@@ -184,6 +184,19 @@
 
   </div>
 <script>
+const switcher = document.getElementById("languageSwitcher");
+
+if (switcher) {
+  // Sæt dropdown til gemt sprog
+  const savedLang = localStorage.getItem("lang") || "en-us";
+  switcher.value = savedLang;
+
+  // Når bruger skifter sprog
+  switcher.addEventListener("change", function () {
+    localStorage.setItem("lang", this.value);
+    location.reload();
+  });
+}
 /* Login translations */
 
 const translations = {
