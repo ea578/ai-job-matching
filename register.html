@@ -157,6 +157,109 @@
 
     <a href="index.html" class="back" id="backHome">
   </div>
+<script>
 
+// Language switcher
+const switcher = document.getElementById("languageSwitcher");
+
+if (switcher) {
+  const savedLang = localStorage.getItem("lang") || "en-us";
+  switcher.value = savedLang;
+
+  switcher.addEventListener("change", function () {
+    localStorage.setItem("lang", this.value);
+    location.reload();
+  });
+}
+
+// Translations
+const translations = {
+
+  "en-us": {
+    title: "Create account",
+    subtitle: "Choose what type of user you are",
+    jobseekerTitle: "Job Seeker",
+    jobseekerText: "Upload your CV and apply once. Let AI find the right job for you.",
+    employerTitle: "Employer",
+    employerText: "Create job listings and receive targeted applications.",
+    back: "← Back to homepage"
+  },
+
+  "da-dk": {
+    title: "Opret bruger",
+    subtitle: "Vælg hvilken type bruger du er",
+    jobseekerTitle: "Jobsøger",
+    jobseekerText: "Upload dit CV og din ansøgning én gang. Lad AI finde de rette job for dig.",
+    employerTitle: "Arbejdsgiver",
+    employerText: "Opret jobopslag og modtag målrettede ansøgninger.",
+    back: "← Tilbage til forsiden"
+  },
+
+  "en-gb": {
+    title: "Create account",
+    subtitle: "Choose what type of user you are",
+    jobseekerTitle: "Job Seeker",
+    jobseekerText: "Upload your CV and apply once. Let AI find the right job for you.",
+    employerTitle: "Employer",
+    employerText: "Create job listings and receive targeted applications.",
+    back: "← Back to homepage"
+  },
+
+  "fr-fr": {
+    title: "Créer un compte",
+    subtitle: "Choisissez votre type d’utilisateur",
+    jobseekerTitle: "Candidat",
+    jobseekerText: "Téléchargez votre CV et postulez une fois.",
+    employerTitle: "Employeur",
+    employerText: "Publiez des offres et recevez des candidatures ciblées.",
+    back: "← Retour à l’accueil"
+  },
+
+  "nl-nl": {
+    title: "Account aanmaken",
+    subtitle: "Kies welk type gebruiker je bent",
+    jobseekerTitle: "Werkzoekende",
+    jobseekerText: "Upload je CV en solliciteer één keer.",
+    employerTitle: "Werkgever",
+    employerText: "Plaats vacatures en ontvang sollicitaties.",
+    back: "← Terug naar startpagina"
+  },
+
+  "sv-se": {
+    title: "Skapa konto",
+    subtitle: "Välj vilken typ av användare du är",
+    jobseekerTitle: "Jobbsökande",
+    jobseekerText: "Ladda upp ditt CV och ansök en gång.",
+    employerTitle: "Arbetsgivare",
+    employerText: "Skapa jobbannonser och få ansökningar.",
+    back: "← Till startsidan"
+  },
+
+  "no-no": {
+    title: "Opprett konto",
+    subtitle: "Velg hvilken type bruker du er",
+    jobseekerTitle: "Jobbsøker",
+    jobseekerText: "Last opp CV-en din og søk én gang.",
+    employerTitle: "Arbeidsgiver",
+    employerText: "Opprett stillinger og motta søknader.",
+    back: "← Til forsiden"
+  }
+
+};
+
+// Load language
+const savedLang = localStorage.getItem("lang") || "en-us";
+const t = translations[savedLang] || translations["en-us"];
+
+// Apply text
+document.getElementById("registerTitle").textContent = t.title;
+document.getElementById("registerSubtitle").textContent = t.subtitle;
+document.getElementById("jobseekerTitle").textContent = t.jobseekerTitle;
+document.getElementById("jobseekerText").textContent = t.jobseekerText;
+document.getElementById("employerTitle").textContent = t.employerTitle;
+document.getElementById("employerText").textContent = t.employerText;
+document.getElementById("backHome").textContent = t.back;
+
+</script>
 </body>
 </html>
