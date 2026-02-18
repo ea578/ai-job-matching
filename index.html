@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FindDitJob – AI Job Matching</title>
 
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+/* NAVIGATION */
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:#111827;
+}
+
+.logo {
+    font-weight:bold;
+    font-size:22px;
+    color:#10b981;
+}
+
+.nav-links {
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.nav-links a {
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+select {
+    padding:6px;
+    border-radius:6px;
+}
+
+/* HERO */
+.hero {
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1 {
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero p {
+    font-size:20px;
+    color:#cbd5e1;
+}
+
+/* WOW MATCH BOX */
+.wow-box {
+    margin-top:40px;
+}
+
+.wow-box input {
+    padding:15px;
+    width:280px;
+    border-radius:8px;
+    border:none;
+}
+
+.wow-box button {
+    padding:15px 25px;
+    border:none;
+    background:#10b981;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.match-result {
+    margin-top:20px;
+    font-size:24px;
+    font-weight:bold;
+    color:#10b981;
+}
+
+/* HOW IT WORKS */
+.how {
+    padding:80px 20px;
+    text-align:center;
+    background:#1e293b;
+}
+
+.step {
+    margin:20px 0;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">FindDitJob</div>
+
+    <div class="nav-links">
+        <a href="#">Jobs</a>
+        <a href="#">For Companies</a>
+        <a href="#">About</a>
+
+        <select id="languageSwitcher">
+            <option value="en">English (US)</option>
+            <option value="da">Dansk</option>
+        </select>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1 id="heroTitle">Stop searching. Start matching.</h1>
+    <p id="heroSubtitle">No more irrelevant jobs. No more wasted time.</p>
+
+    <div class="wow-box">
+        <input type="text" id="jobInput" placeholder="Type your dream job...">
+        <button onclick="checkMatch()">Check my match</button>
+
+        <div class="match-result" id="matchResult"></div>
+    </div>
+</section>
+
+<section class="how" id="howItWorks">
+    <h2>How it works</h2>
+
+    <div class="step">1. Tell us your dream job</div>
+    <div class="step">2. AI matches you with the right companies</div>
+    <div class="step">3. We send your profile directly</div>
+</section>
+
+<script>
+function checkMatch() {
+    const input = document.getElementById("jobInput").value;
+    const result = document.getElementById("matchResult");
+
+    if(input.length < 3){
+        result.innerHTML = "Please enter a job title.";
+        return;
+    }
+
+    let percentage = Math.floor(Math.random() * 21) + 75; // 75–95%
+    result.innerHTML = "🔥 " + percentage + "% Match Found!";
+}
+
+/* LANGUAGE SWITCH */
+const translations = {
+    en: {
+        title: "Stop searching. Start matching.",
+        subtitle: "No more irrelevant jobs. No more wasted time."
+    },
+    da: {
+        title: "Stop med at søge. Start med at matche.",
+        subtitle: "Ingen irrelevante jobs. Ingen spildt tid."
+    }
+};
+
+document.getElementById("languageSwitcher").addEventListener("change", function(){
+    const lang = this.value;
+    document.getElementById("heroTitle").innerText = translations[lang].title;
+    document.getElementById("heroSubtitle").innerText = translations[lang].subtitle;
+});
+</script>
+
+</body>
+</html>
