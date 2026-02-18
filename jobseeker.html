@@ -1,211 +1,291 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
-  <title>Jobsøger – FindDitJob</title>
+<meta charset="UTF-8" />
+<title>Jobsøger – FindDitJob</title>
 
-  <style>
-    :root {
-      --green: #1f7a4a;
-      --green-dark: #165c38;
-      --gold: #c9a24d;
-      --text: #0f172a;
-      --muted: #64748b;
-      --bg: #f6f9fc;
-      --card: #ffffff;
-    }
+<style>
+:root {
+  --green: #1f7a4a;
+  --green-dark: #165c38;
+  --gold: #c9a24d;
+  --text: #0f172a;
+  --muted: #64748b;
+  --bg: #f6f9fc;
+  --card: #ffffff;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
 
-    header {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
-    }
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+}
 
-    .logo span {
-      color: var(--gold);
-    }
+.logo span {
+  color: var(--gold);
+}
 
-    .container {
-      max-width: 960px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
+.container {
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-    .sub {
-      color: var(--muted);
-      margin-bottom: 40px;
-      font-size: 18px;
-    }
+.sub {
+  color: var(--muted);
+  margin-bottom: 40px;
+  font-size: 18px;
+}
 
-    .card {
-      background: var(--card);
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-    }
+.card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
 
-    label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 8px;
-    }
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
 
-    input,
-    select {
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #d1d5db;
-      font-size: 16px;
-    }
+input, select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 16px;
+}
 
-    input[type="file"] {
-      padding: 10px;
-      background: #f9fafb;
-    }
+input[type="file"] {
+  background: #f9fafb;
+}
 
-    .full {
-      grid-column: 1 / -1;
-    }
+.full {
+  grid-column: 1 / -1;
+}
 
-    .cta {
-      margin-top: 30px;
-      display: flex;
-      gap: 16px;
-    }
+.cta {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+}
 
-    .btn {
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 16px;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-    }
+.btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
 
-    .btn-primary {
-      background: var(--green);
-      color: white;
-    }
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
 
-    .btn-primary:hover {
-      background: var(--green-dark);
-    }
+.btn-primary:hover {
+  background: var(--green-dark);
+}
 
-    .btn-outline {
-      background: transparent;
-      color: var(--green);
-      border: 2px solid var(--green);
-    }
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border: 2px solid var(--green);
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+  font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">FindDit<span>Job</span></div>
-    <a href="index.html" style="text-decoration:none;color:var(--muted)">Tilbage til forsiden</a>
-  </header>
+<!-- Language Switcher -->
+<div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+<select id="languageSwitcher">
+  <option value="en-us">English (US)</option>
+  <option value="en-gb">English (UK)</option>
+  <option value="da-dk">Dansk (DK)</option>
+  <option value="de-de">Deutsch (DE)</option>
+  <option value="fr-fr">Français (FR)</option>
+  <option value="nl-nl">Nederlands (NL)</option>
+  <option value="sv-se">Svenska (SE)</option>
+  <option value="no-no">Norsk (NO)</option>
+</select>
+</div>
 
-  <!-- CONTENT -->
-  <main class="container">
-    <h1>Upload dit CV og din ansøgning</h1>
-    <p class="sub">
-      Upload én gang – vores <strong>AI-drevne matching</strong> finder relevante job
-      og sender ansøgninger for dig automatisk.
-    </p>
+<header>
+  <div class="logo">FindDit<span>Job</span></div>
+  <a href="index.html" id="backHome" style="text-decoration:none;color:var(--muted)">Tilbage til forsiden</a>
+</header>
 
-    <div class="card">
-      <form>
+<main class="container">
+<h1 id="jobTitle">Upload dit CV og din ansøgning</h1>
 
-        <div class="grid">
+<p class="sub" id="jobSubtitle">
+Upload én gang – vores AI-drevne matching finder relevante job og sender ansøgninger for dig automatisk.
+</p>
 
-          <div>
-            <label>CV (PDF)</label>
-            <input type="file" accept=".pdf" />
-          </div>
+<div class="card">
+<form>
 
-          <div>
-            <label>Ansøgning (PDF)</label>
-            <input type="file" accept=".pdf" />
-          </div>
+<div class="grid">
 
-          <div>
-            <label>Hvilken type job søger du?</label>
-            <select>
-              <option>Vælg jobtype</option>
-              <option>Fuldtid</option>
-              <option>Deltid</option>
-              <option>Studiejob</option>
-              <option>Praktik</option>
-              <option>Freelance</option>
-            </select>
-          </div>
+<div>
+<label id="cvLabel">CV (PDF)</label>
+<input type="file" accept=".pdf" />
+</div>
 
-          <div>
-            <label>Hvor vil du arbejde?</label>
-            <input type="text" placeholder="Fx København, Aarhus eller Remote" />
-          </div>
+<div>
+<label id="applicationLabel">Ansøgning (PDF)</label>
+<input type="file" accept=".pdf" />
+</div>
 
-          <div class="full">
-            <label>Evt. ekstra ønsker (valgfrit)</label>
-            <input type="text" placeholder="Fx lønniveau, branche, fleksibilitet" />
-          </div>
+<div>
+<label id="jobTypeLabel">Hvilken type job søger du?</label>
+<select>
+<option id="jobTypeDefault">Vælg jobtype</option>
+<option>Fuldtid</option>
+<option>Deltid</option>
+<option>Studiejob</option>
+<option>Praktik</option>
+<option>Freelance</option>
+</select>
+</div>
 
-        </div>
+<div>
+<label id="locationLabel">Hvor vil du arbejde?</label>
+<input type="text" id="locationInput" placeholder="Fx København, Aarhus eller Remote" />
+</div>
 
-        <div class="cta">
-          <button class="btn btn-primary">Start automatisk jobsøgning</button>
-          <a href="index.html" class="btn btn-outline">Annuller</a>
-        </div>
+<div class="full">
+<label id="extraLabel">Evt. ekstra ønsker (valgfrit)</label>
+<input type="text" id="extraInput" placeholder="Fx lønniveau, branche, fleksibilitet" />
+</div>
 
-      </form>
-    </div>
-  </main>
+</div>
 
-  <footer>
-    © 2026 FindDitJob – AI-drevet jobmatching
-  </footer>
+<div class="cta">
+<button type="button" class="btn btn-primary" id="startBtn">
+Start automatisk jobsøgning
+</button>
+<a href="index.html" class="btn btn-outline" id="cancelBtn">
+Annuller
+</a>
+</div>
+
+</form>
+</div>
+</main>
+
+<footer id="footerText">
+© 2026 FindDitJob – AI-drevet jobmatching
+</footer>
+
+<script>
+const switcher = document.getElementById("languageSwitcher");
+const savedLang = localStorage.getItem("lang") || "da-dk";
+switcher.value = savedLang;
+
+switcher.addEventListener("change", function() {
+  localStorage.setItem("lang", this.value);
+  location.reload();
+});
+
+const translations = {
+
+"da-dk": {
+  title: "Upload dit CV og din ansøgning",
+  subtitle: "Upload én gang – vores AI-drevne matching finder relevante job og sender ansøgninger for dig automatisk.",
+  cv: "CV (PDF)",
+  application: "Ansøgning (PDF)",
+  jobType: "Hvilken type job søger du?",
+  location: "Hvor vil du arbejde?",
+  extra: "Evt. ekstra ønsker (valgfrit)",
+  start: "Start automatisk jobsøgning",
+  cancel: "Annuller",
+  back: "Tilbage til forsiden"
+},
+
+"en-us": {
+  title: "Upload your CV and application",
+  subtitle: "Upload once – our AI-powered matching finds relevant jobs and sends applications automatically.",
+  cv: "CV (PDF)",
+  application: "Application (PDF)",
+  jobType: "What type of job are you looking for?",
+  location: "Where do you want to work?",
+  extra: "Additional preferences (optional)",
+  start: "Start automatic job search",
+  cancel: "Cancel",
+  back: "Back to homepage"
+},
+
+"de-de": {
+  title: "Lebenslauf und Bewerbung hochladen",
+  subtitle: "Einmal hochladen – unser KI-gestütztes Matching findet passende Jobs und versendet Bewerbungen automatisch.",
+  cv: "Lebenslauf (PDF)",
+  application: "Bewerbung (PDF)",
+  jobType: "Welche Art von Job suchst du?",
+  location: "Wo möchtest du arbeiten?",
+  extra: "Zusätzliche Wünsche (optional)",
+  start: "Automatische Jobsuche starten",
+  cancel: "Abbrechen",
+  back: "Zurück zur Startseite"
+}
+
+};
+
+const t = translations[savedLang];
+if (t) {
+  document.getElementById("jobTitle").innerText = t.title;
+  document.getElementById("jobSubtitle").innerText = t.subtitle;
+  document.getElementById("cvLabel").innerText = t.cv;
+  document.getElementById("applicationLabel").innerText = t.application;
+  document.getElementById("jobTypeLabel").innerText = t.jobType;
+  document.getElementById("locationLabel").innerText = t.location;
+  document.getElementById("extraLabel").innerText = t.extra;
+  document.getElementById("startBtn").innerText = t.start;
+  document.getElementById("cancelBtn").innerText = t.cancel;
+  document.getElementById("backHome").innerText = t.back;
+}
+</script>
 
 </body>
 </html>
