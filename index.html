@@ -956,6 +956,31 @@ if (savedLang && translations[savedLang]) {
 switcher.value = defaultLang;
 applyLanguage(defaultLang);
 
+<script>
+function generateMatch() {
+  const input = document.getElementById("jobInput").value.toLowerCase();
+  const result = document.getElementById("matchResult");
+  const scoreText = document.getElementById("matchScore");
+  const fill = document.getElementById("matchFill");
+
+  if (!input) return;
+
+  let baseScore = 60;
+
+  if (input.length > 10) baseScore += 10;
+  if (input.includes("developer") || input.includes("engineer")) baseScore += 15;
+  if (input.includes("manager")) baseScore += 12;
+  if (input.includes("data")) baseScore += 14;
+  if (input.includes("designer")) baseScore += 13;
+  if (input.includes("marketing")) baseScore += 11;
+
+  if (baseScore > 95) baseScore = 95;
+
+  result.style.display = "block";
+
+  scoreText.innerText = baseScore + "% Match";
+  fill.style.width = baseScore + "%";
+}
 </script>
 </body>
 </html>
