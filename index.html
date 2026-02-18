@@ -281,13 +281,18 @@ AI finds the right job for you — automatically.
 <!-- INDSÆT HER 👇 -->
 
 <div class="match-preview">
-    <div class="match-card">
-        <strong>AI Match Result</strong>
-        <p>Frontend Developer — 87% match</p>
-        <div class="match-bar">
-    <div class="match-fill"></div>
-</div>
+  <h3>AI Match Preview</h3>
+
+  <input type="text" id="jobInput" placeholder="Enter your dream job (e.g. Frontend Developer)" class="match-input">
+
+  <button onclick="generateMatch()" class="match-btn">Check my match</button>
+
+  <div id="matchResult" style="display:none;">
+    <div class="match-score" id="matchScore"></div>
+    <div class="match-bar">
+      <div class="match-fill" id="matchFill"></div>
     </div>
+  </div>
 </div>
 
 </section>
