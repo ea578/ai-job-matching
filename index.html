@@ -1016,6 +1016,31 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
+<script>
+function generateMatch() {
+
+  const input = document.getElementById("jobInput");
+  const resultBox = document.getElementById("matchResult");
+  const resultScore = document.getElementById("matchScore");
+  const resultFill = document.getElementById("matchFill");
+
+  const job = input.value.trim();
+
+  if (job === "") {
+    alert("Please enter your dream job first.");
+    return;
+  }
+
+  // Simuler AI logik
+  let baseScore = 60;
+  let randomBoost = Math.floor(Math.random() * 25);
+  let finalScore = baseScore + randomBoost;
+
+  resultScore.textContent = finalScore + "% match for " + job;
+  resultFill.style.width = finalScore + "%";
+
+  resultBox.style.display = "block";
+}
 </script>
 </body>
 </html>
