@@ -151,7 +151,69 @@
       margin: 0 auto 60px;
       color: var(--muted);
     }
+/* ===== MATCH PREVIEW WOW SECTION ===== */
 
+.match-preview {
+  margin: 60px auto;
+  max-width: 700px;
+  background: linear-gradient(135deg, #1f7a4a, #165c38);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.match-preview::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+  animation: rotateGlow 8s linear infinite;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.match-preview h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.match-score {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.match-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.match-fill {
+  height: 100%;
+  width: 80%;
+  background: #00ff95;
+  border-radius: 20px;
+  animation: fillBar 2s ease forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: 80%; }
+}
     footer {
       text-align: center;
       padding: 40px;
