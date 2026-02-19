@@ -246,7 +246,7 @@ function scrollToAbout(){
 }
 
 function checkMatch(){
-  const input = document.getElementById("jobInput").value.trim();
+  const input = document.getElementById("jobInput").value.trim().toLowerCase();
   const result = document.getElementById("matchResult");
 
   if(input === ""){
@@ -254,8 +254,24 @@ function checkMatch(){
     return;
   }
 
-  const availableJobs = 8 + Math.floor(Math.random()*15);
-  result.textContent = "We found " + availableJobs + " open positions related to '" + input + "' in your area.";
+  const jobDatabase = {
+    "frontend developer": 12,
+    "backend developer": 9,
+    "software engineer": 18,
+    "marketing manager": 6,
+    "sales manager": 7,
+    "graphic designer": 5,
+    "data analyst": 11,
+    "project manager": 8,
+    "accountant": 4,
+    "hr manager": 3
+  };
+
+  if(jobDatabase[input]){
+    result.textContent = "We found " + jobDatabase[input] + " open positions for '" + input + "' in your area.";
+  } else {
+    result.textContent = "No relevant jobs found. Try another job title.";
+  }
 }
 </script>
 
