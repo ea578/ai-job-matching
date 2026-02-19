@@ -191,6 +191,24 @@ document.getElementById("languageSwitcher").addEventListener("change", function 
 });
 
 applyTranslations("en-us");
+function checkMatch() {
+  const job = document.getElementById("jobInput").value.trim();
+  const resultBox = document.getElementById("matchResult");
+
+  if (!job) {
+    resultBox.innerHTML = "Please enter a job title first.";
+    return;
+  }
+
+  // Fake preview score based on text length (for demo only)
+  let score = Math.min(95, 50 + job.length * 2);
+
+  resultBox.innerHTML = `
+    <strong>Match preview for "${job}"</strong><br>
+    Estimated match: ${score}%<br><br>
+    <em>Create a profile to see real AI matching.</em>
+  `;
+}
 </script>
 
 </body>
