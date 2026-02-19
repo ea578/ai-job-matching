@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FindDitJob</title>
 
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #111;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #aaa;
+}
+
+input {
+  padding: 12px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  background: #00c896;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#matchResult {
+  margin-top: 25px;
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div><strong>FindDitJob</strong></div>
+  <div>
+    <a href="#jobs">Jobs</a>
+    <a href="#companies">For Companies</a>
+    <a href="#about">About</a>
+    <select id="languageSwitcher">
+      <option value="en">US</option>
+      <option value="da">DK</option>
+    </select>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1 id="headline">No more irrelevant jobs. No more wasted time.</h1>
+  <p id="subtext">Type a real job title and see available matches instantly.</p>
+  <input type="text" id="jobInput" placeholder="Frontend Developer">
+  <button onclick="checkMatch()">Check My Match</button>
+  <div id="matchResult"></div>
+</section>
+
+<section id="jobs" class="section">
+  <h2>Available Jobs</h2>
+  <p>We match you with relevant companies instantly.</p>
+</section>
+
+<section id="companies" class="section">
+  <h2>For Companies</h2>
+  <p>Stop searching. Start matching.</p>
+</section>
+
+<section id="about" class="section">
+  <h2>About FindDitJob</h2>
+  <p>AI-driven job matching built for speed and precision.</p>
+</section>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+const translations = {
+  en: {
+    headline: "No more irrelevant jobs. No more wasted time.",
+    subtext: "Type a real job title and see available matches instantly."
+  },
+  da: {
+    headline: "Ingen irrelevante jobs. Ingen spildt tid.",
+    subtext: "Skriv en rigtig jobtitel og se relevante matches med det samme."
+  }
+};
+
+document.getElementById("languageSwitcher").addEventListener("change", function() {
+  const lang = this.value;
+  document.getElementById("headline").innerText = translations[lang].headline;
+  document.getElementById("subtext").innerText = translations[lang].subtext;
+});
+
+function checkMatch() {
+  const input = document.getElementById("jobInput").value.trim().toLowerCase();
+  const result = document.getElementById("matchResult");
+
+  if (!input) {
+    result.innerHTML = "Please enter a job title.";
+    return;
+  }
+
+  const jobs = [
+    { title: "Frontend Developer", company: "Google" },
+    { title: "Backend Developer", company: "Microsoft" },
+    { title: "Software Engineer", company: "Amazon" },
+    { title: "Data Analyst", company: "Meta" },
+    { title: "Marketing Manager", company: "Tesla" },
+    { title: "Project Manager", company: "Maersk" },
+    { title: "Graphic Designer", company: "Spotify" },
+    { title: "HR Manager", company: "Novo Nordisk" }
+  ];
+
+  const matches = jobs.filter(job =>
+    job.title.toLowerCase().includes(input)
+  );
+
+  if (matches.length === 0) {
+    result.innerHTML = "No relevant jobs found.";
+    return;
+  }
+
+  let output = "<strong>Available positions:</strong><br><br>";
+
+  matches.forEach(job => {
+    output += job.title + " – " + job.company + "<br>";
+  });
+
+  result.innerHTML = output;
+}
+</script>
+
+</body>
+</html>
