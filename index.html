@@ -112,67 +112,60 @@ button {
 </section>
 
 <script>
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href"))
-      .scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-const translations = {
-  en: {
-    headline: "No more irrelevant jobs. No more wasted time.",
-    subtext: "Type a real job title and see available matches instantly."
-  },
-  da: {
-    headline: "Ingen irrelevante jobs. Ingen spildt tid.",
-    subtext: "Skriv en rigtig jobtitel og se relevante matches med det samme."
-  }
-};
-
-document.getElementById("languageSwitcher").addEventListener("change", function() {
-  const lang = this.value;
-  document.getElementById("headline").innerText = translations[lang].headline;
-  document.getElementById("subtext").innerText = translations[lang].subtext;
-});
+const jobsDatabase = [
+  { title: "Frontend Developer", company: "TechNova", location: "Copenhagen" },
+  { title: "React Developer", company: "GreenSoft", location: "Aarhus" },
+  { title: "Backend Developer", company: "DataCore", location: "Remote" },
+  { title: "Marketing Manager", company: "BrandHouse", location: "Copenhagen" },
+  { title: "UI/UX Designer", company: "CreativeLabs", location: "Odense" },
+  { title: "Fullstack Developer", company: "CodeWorks", location: "Copenhagen" }
+];
 
 function checkMatch() {
-  const input = document.getElementById("jobInput").value.trim().toLowerCase();
-  const result = document.getElementById("matchResult");
+  const input = document.getElementById("jobInput").value.toLowerCase();
+  const resultBox = document.getElementById("matchResult");
+
+  resultBox.innerHTML = "";
 
   if (!input) {
-    result.innerHTML = "Please enter a job title.";
+    resultBox.innerHTML = "Please enter a job title.";
     return;
   }
 
-  const jobs = [
-    { title: "Frontend Developer", company: "Google" },
-    { title: "Backend Developer", company: "Microsoft" },
-    { title: "Software Engineer", company: "Amazon" },
-    { title: "Data Analyst", company: "Meta" },
-    { title: "Marketing Manager", company: "Tesla" },
-    { title: "Project Manager", company: "Maersk" },
-    { title: "Graphic Designer", company: "Spotify" },
-    { title: "HR Manager", company: "Novo Nordisk" }
-  ];
-
-  const matches = jobs.filter(job =>
+  const matches = jobsDatabase.filter(job =>
     job.title.toLowerCase().includes(input)
   );
 
-  if (matches.length === 0) {
-    result.innerHTML = "No relevant jobs found.";
-    return;
+  if (matches.length > 0) {
+    let html = `<h3>We found ${matches.length} relevant job(s):</h3>`;
+
+    matches.forEach(job => {
+      html += `
+        <div class="job-preview">
+          <strong>${job.title}</strong><br>
+          ${job.company} – ${job.location}
+        </div>
+      `;
+    });
+
+    html += `
+      <div style="margin-top:20px;">
+        <button onclick="alert('Create free profile to unlock full AI matching')" class="cta-preview">
+          Unlock full AI matching
+        </button>
+      </div>
+    `;
+
+    resultBox.innerHTML = html;
+
+  } else {
+    resultBox.innerHTML = `
+      <p>No direct matches found.</p>
+      <button onclick="alert('Create profile and let AI search for you')" class="cta-preview">
+        Let AI search across all companies
+      </button>
+    `;
   }
-
-  let output = "<strong>Available positions:</strong><br><br>";
-
-  matches.forEach(job => {
-    output += job.title + " – " + job.company + "<br>";
-  });
-
-  result.innerHTML = output;
 }
 </script>
 
