@@ -141,36 +141,56 @@ select {
 </section>
 
 <script>
-function checkMatch() {
-    const input = document.getElementById("jobInput").value;
-    const result = document.getElementById("matchResult");
-
-    if(input.length < 3){
-        result.innerHTML = "Please enter a job title.";
-        return;
-    }
-
-    let percentage = Math.floor(Math.random() * 21) + 75; // 75–95%
-    result.innerHTML = "🔥 " + percentage + "% Match Found!";
-}
-
-/* LANGUAGE SWITCH */
 const translations = {
-    en: {
-        title: "Stop searching. Start matching.",
-        subtitle: "No more irrelevant jobs. No more wasted time."
-    },
-    da: {
-        title: "Stop med at søge. Start med at matche.",
-        subtitle: "Ingen irrelevante jobs. Ingen spildt tid."
-    }
+
+  "en-us": {
+    heroTitle: "Find your next job",
+    heroSub: "Upload once. Let AI match you automatically.",
+    navJobs: "Jobs",
+    navCompanies: "For Companies",
+    navAbout: "About",
+    matchButton: "Check my match"
+  },
+
+  "da": {
+    heroTitle: "Find dit næste job",
+    heroSub: "Upload én gang. Lad AI matche dig automatisk.",
+    navJobs: "Job",
+    navCompanies: "For virksomheder",
+    navAbout: "Om os",
+    matchButton: "Tjek mit match"
+  },
+
+  "en-gb": {
+    heroTitle: "Find your next job",
+    heroSub: "Upload once. Let AI match you automatically.",
+    navJobs: "Jobs",
+    navCompanies: "For Companies",
+    navAbout: "About",
+    matchButton: "Check my match"
+  }
+
 };
 
-document.getElementById("languageSwitcher").addEventListener("change", function(){
-    const lang = this.value;
-    document.getElementById("heroTitle").innerText = translations[lang].title;
-    document.getElementById("heroSubtitle").innerText = translations[lang].subtitle;
+function applyTranslations(lang) {
+
+  document.getElementById("heroTitle").textContent = translations[lang].heroTitle;
+  document.getElementById("heroSub").textContent = translations[lang].heroSub;
+
+  document.getElementById("navJobs").textContent = translations[lang].navJobs;
+  document.getElementById("navCompanies").textContent = translations[lang].navCompanies;
+  document.getElementById("navAbout").textContent = translations[lang].navAbout;
+
+  document.getElementById("matchButton").textContent = translations[lang].matchButton;
+
+}
+
+document.getElementById("languageSwitcher").addEventListener("change", function () {
+  const selectedLang = this.value;
+  applyTranslations(selectedLang);
 });
+
+applyTranslations("en-us");
 </script>
 
 </body>
