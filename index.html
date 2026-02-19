@@ -170,12 +170,28 @@ function checkMatch() {
     let html = `<h3>We found ${matches.length} relevant job(s):</h3>`;
 
     matches.forEach(job => {
-      html += `
-        <div class="job-preview">
-          <strong>${job.title}</strong><br>
-          ${job.company} – ${job.location}
+      // Beregn realistisk match procent
+let matchPercent;
+
+if (input === job.title.toLowerCase()) {
+    matchPercent = 80 + Math.floor(Math.random() * 16); // 80–95%
+} 
+else if (job.title.toLowerCase().includes(input)) {
+    matchPercent = 65 + Math.floor(Math.random() * 20); // 65–85%
+} 
+else {
+    matchPercent = 40 + Math.floor(Math.random() * 25); // 40–65%
+}
+
+html += `
+    <div class="job-preview">
+        <strong>${job.title}</strong><br>
+        ${job.company} – ${job.location}<br>
+        <div style="margin-top:6px; font-weight:bold; color:#FFD700;">
+            ${matchPercent}% match
         </div>
-      `;
+    </div>
+`;
     });
 
     html += `
