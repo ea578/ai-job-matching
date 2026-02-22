@@ -181,6 +181,15 @@ function checkMatch() {
 
   resultBox.innerHTML = "";
 
+resultBox.innerHTML = `
+    <div style="text-align:center; padding:30px;">
+        <div class="scanner"></div>
+        <p style="margin-top:15px; font-weight:bold;">
+            AI is analyzing your match...
+        </p>
+    </div>
+`;
+
   if (!input) {
     resultBox.innerHTML = "Please enter a job title.";
     return;
