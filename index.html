@@ -190,10 +190,25 @@ resultBox.innerHTML = `
     </div>
 `;
 
-  if (!input) {
-    resultBox.innerHTML = "Please enter a job title.";
-    return;
-  }
+  setTimeout(() => {
+    resultBox.innerHTML = html;
+
+    document.querySelectorAll(".match-fill").forEach(bar => {
+        const percent = parseInt(bar.getAttribute("data-percent"));
+        bar.style.width = percent + "%";
+
+        if (percent < 50) {
+            bar.style.background = "#ff4d4d";
+        } else if (percent < 70) {
+            bar.style.background = "#ff9900";
+        } else if (percent < 90) {
+            bar.style.background = "#4CAF50";
+        } else {
+            bar.style.background = "linear-gradient(90deg, #FFD700, #c6a85b)";
+        }
+    });
+
+}, 900);
 
   const matches = jobsDatabase.filter(job =>
     job.title.toLowerCase().includes(input)
