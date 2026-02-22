@@ -187,10 +187,13 @@ html += `
     <div class="job-preview">
         <strong>${job.title}</strong><br>
         ${job.company} – ${job.location}<br>
-        <div style="margin-top:6px; font-weight:bold; color:#FFD700;">
-            ${matchPercent}% match
-        </div>
-    </div>
+        <div class="match-percent">
+    ${matchPercent}% match
+</div>
+
+<div class="match-bar">
+    <div class="match-fill" style="width:${matchPercent}%"></div>
+</div>
 `;
     });
 
