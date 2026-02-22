@@ -239,11 +239,21 @@ html += `
     </div>
 `;
 
-    resultBox.innerHTML = html;
     setTimeout(() => {
     document.querySelectorAll(".match-fill").forEach(bar => {
-        const percent = bar.getAttribute("data-percent");
+        const percent = parseInt(bar.getAttribute("data-percent"));
+
         bar.style.width = percent + "%";
+
+        if (percent < 50) {
+            bar.style.background = "#ff4d4d"; // red
+        } else if (percent < 70) {
+            bar.style.background = "#ff9900"; // orange
+        } else if (percent < 90) {
+            bar.style.background = "#4CAF50"; // green
+        } else {
+            bar.style.background = "linear-gradient(90deg, #FFD700, #c6a85b)"; // gold
+        }
     });
 }, 100);
 
