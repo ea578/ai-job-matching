@@ -239,6 +239,12 @@ html += `
 `;
 
     resultBox.innerHTML = html;
+    setTimeout(() => {
+    document.querySelectorAll(".match-fill").forEach(bar => {
+        const percent = bar.getAttribute("data-percent");
+        bar.style.width = percent + "%";
+    });
+}, 100);
 
   } else {
     resultBox.innerHTML = `
