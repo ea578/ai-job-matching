@@ -252,14 +252,26 @@ resultBox.innerHTML = `
       // Beregn realistisk match procent
 let matchPercent;
 
+let matchPercent = 0;
+
+// Exact title match
 if (input === job.title.toLowerCase()) {
-    matchPercent = 80 + Math.floor(Math.random() * 16); // 80–95%
-} 
+    matchPercent = 85 + Math.floor(Math.random() * 11);
+}
+
+// Partial title match
 else if (job.title.toLowerCase().includes(input)) {
-    matchPercent = 65 + Math.floor(Math.random() * 20); // 65–85%
-} 
+    matchPercent = 70 + Math.floor(Math.random() * 16);
+}
+
+// Skill match
+else if (job.skills && job.skills.some(skill => input.includes(skill))) {
+    matchPercent = 60 + Math.floor(Math.random() * 21);
+}
+
+// Weak fallback
 else {
-    matchPercent = 40 + Math.floor(Math.random() * 25); // 40–65%
+    matchPercent = 30 + Math.floor(Math.random() * 31);
 }
 
 html += `
