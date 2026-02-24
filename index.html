@@ -269,7 +269,19 @@ html += `
 
     document.querySelectorAll(".match-fill").forEach(bar => {
         const percent = parseInt(bar.getAttribute("data-percent"));
-        bar.style.width = percent + "%";
+        const percentText = bar.parentElement.nextElementSibling;
+
+        let current = 0;
+
+        const interval = setInterval(() => {
+            if (current >= percent) {
+                clearInterval(interval);
+            } else {
+                current++;
+                bar.style.width = current + "%";
+                percentText.innerText = current + "% match";
+            }
+        }, 10);
 
         if (percent < 50) {
             bar.style.background = "#ff4d4d";
