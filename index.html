@@ -267,14 +267,12 @@ html += `
     `;
 
 html += `
-    <div style="margin-top:10px; font-size:14px; opacity:0.9;">
-        🔒 Create a free profile to see:
-        <ul style="margin-top:6px; text-align:left; display:inline-block;">
-            <li>Skill match breakdown</li>
-            <li>Salary compatibility</li>
-            <li>Company culture fit</li>
-        </ul>
-    </div>
+    <div class="unlock-box">
+    <p>🔒 Unlock full AI breakdown</p>
+    <button class="unlock-btn" onclick="goToRegister()">
+        Create Free Profile
+    </button>
+</div>
 `;
 
     setTimeout(() => {
