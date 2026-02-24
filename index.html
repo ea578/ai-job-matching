@@ -355,7 +355,7 @@ html += `
 
     document.querySelectorAll(".match-fill").forEach(bar => {
         const percent = parseInt(bar.getAttribute("data-percent"));
-        const percentText = bar.parentElement.nextElementSibling;
+        
 
         let current = 0;
 
@@ -365,7 +365,7 @@ html += `
             } else {
                 current++;
                 bar.style.width = current + "%";
-                percentText.innerText = current + "% match";
+                
             }
         }, 10);
 
