@@ -309,7 +309,21 @@ html += `
         ${job.company} – ${job.location}<br>
         <div class="match-percent">
     ${matchPercent}% match
+    <div class="ai-locked-box">
+    <div class="ai-locked-content">
+        <p>🔒 AI Compatibility Analysis</p>
+        <ul>
+            <li>Skill Match Breakdown</li>
+            <li>Experience Alignment Score</li>
+            <li>Salary Prediction</li>
+            <li>Company Culture Fit</li>
+        </ul>
+        <button class="unlock-btn" onclick="goToRegister()">
+            Unlock Full AI Analysis
+        </button>
+    </div>
 </div>
+
 
 <div class="match-bar">
     <div class="match-fill" data-percent="${matchPercent}"></div>
