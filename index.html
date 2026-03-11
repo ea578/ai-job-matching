@@ -496,6 +496,13 @@ html += `
 function goToRegister() {
     alert("Next step: User registration flow");
 }
+function goToRegister() {
+  document.getElementById("registerModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("registerModal").style.display = "none";
+}
 </script>
 <!-- REGISTER MODAL -->
 <div id="registerModal" class="modal">
